@@ -1,4 +1,4 @@
-/* Overall choice of a serif font */
+/* Overall choice of a serif font ... */
 
 /* The actual content: */
 .cm-editor .cm-content {
@@ -13,13 +13,45 @@ div.cm-sizer div.inline-title {
     font-family: serif;
 }
 
+/* Margin around paragraphs, ol, and ul ... */
+
 .markdown-preview-view p,
 .markdown-preview-view ol,
 .markdown-preview-view ul{
     margin: 0.4em 0;
 }
 
-/* Headlines */
+/* In live mode, paragraphs are separted by blank lines: */
+div.cm-line:has(> br:only-child):has(+ .cm-line) {
+    font-size: 40%;
+}
+
+/* This is a special unavoidable blank line heading tables: */
+div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
+    font-size: 40%;
+    height: 0 !important;
+}
+
+/* Reduced font size for code elements ... */
+
+.markdown-preview-view code {
+    font-size: 75%;
+}
+.markdown-preview-view pre code {
+    font-size: 85%;
+}
+.markdown-preview-view pre {
+    margin: 0;
+}
+
+.cm-editor .cm-content span.cm-inline-code {
+    font-size: 75%;
+}
+.cm-editor .cm-content div.HyperMD-codeblock {
+    font-size: 85%;
+}
+
+/* Headlines ... */
 
 .markdown-preview-view h1 { margin: 0.62em 0 !important; }
 .markdown-preview-view h2 { margin: 0.68em 0 !important; }
@@ -41,12 +73,3 @@ div.HyperMD-header-3.HyperMD-header.cm-line { padding-top: 0.76em !important; }
 div.HyperMD-header-4.HyperMD-header.cm-line { padding-top: 0.84em !important; }
 div.HyperMD-header-5.HyperMD-header.cm-line { padding-top: 0.93em !important; }
 div.HyperMD-header-6.HyperMD-header.cm-line { padding-top: 1.00em !important; }
-
-div.cm-line:has(> br:only-child):has(+ .cm-line) {
-    font-size: 40%;
-}
-
-div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
-    font-size: 40%;
-    height: 0 !important;
-}
