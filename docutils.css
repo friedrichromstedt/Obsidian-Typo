@@ -42,7 +42,14 @@ div.HyperMD-header-4.HyperMD-header.cm-line { padding-top: 1.11em !important; }
 div.HyperMD-header-5.HyperMD-header.cm-line { padding-top: 1.35em !important; }
 div.HyperMD-header-6.HyperMD-header.cm-line { padding-top: 1.61em !important; }
 
+div.cm-line:has(> br:only-child) {
+    font-size: 40%;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
 div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
+    font-size: 40%;
     height: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
