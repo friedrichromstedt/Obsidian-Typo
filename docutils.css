@@ -13,11 +13,11 @@ div.cm-sizer div.inline-title {
     font-family: serif;
 }
 
-/*
-.markdown-preview-view p {
-    margin: 0em 0;
+.markdown-preview-view p,
+.markdown-preview-view ol,
+.markdown-preview-view ul{
+    margin: 0.4em 0;
 }
-*/
 
 /* Headlines */
 
