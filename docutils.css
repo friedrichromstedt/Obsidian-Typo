@@ -1,0 +1,46 @@
+.cm-editor .cm-content {
+    font-family: serif;
+}
+div.cm-sizer div.inline-title {
+    font-family: serif;
+}
+.markdown-preview-view {
+    font-family: serif;
+}
+
+/*
+.markdown-preview-view p {
+    margin: 0em 0;
+}
+*/
+
+/* Headlines */
+
+.markdown-preview-view h1 { margin: 0.67em 0 !important; }
+.markdown-preview-view h2 { margin: 0.83em 0 !important; }
+.markdown-preview-view h3 { margin: 1.00em 0 !important; }
+.markdown-preview-view h4 { margin: 1.33em 0 !important; }
+.markdown-preview-view h5 { margin: 1.67em 0 !important; }
+.markdown-preview-view h6 { margin: 2.33em 0 !important; }
+/* The ``!important`` is required because in some obscure cases Obsidian
+ * adds ``margin-top: var(--heading-spacing);``
+ */
+
+div.HyperMD-header.cm-line {
+    --p-spacing: 0;
+}
+div.HyperMD-header-1.HyperMD-header.cm-line { padding: 0.67em 0; }
+div.HyperMD-header-2.HyperMD-header.cm-line { padding: 0.83em 0; }
+div.HyperMD-header-3.HyperMD-header.cm-line { padding: 1.00em 0; }
+div.HyperMD-header-4.HyperMD-header.cm-line { padding: 1.33em 0; }
+div.HyperMD-header-5.HyperMD-header.cm-line { padding: 1.67em 0; }
+div.HyperMD-header-6.HyperMD-header.cm-line { padding: 2.33em 0; }
+
+br { font-size: 0; }
+
+div.cm-line:has(> br:only-child) {
+    line-height: 0 !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}

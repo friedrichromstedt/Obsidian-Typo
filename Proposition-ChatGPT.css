@@ -1,0 +1,227 @@
+/************************************************************
+    docutils.css – Typographie angelehnt an docutils/rST
+    ------------------------------------------------------
+    Ziel: klare, lesbare, klassische Typographie im Stil der
+    HTML-Ausgabe von docutils. Minimal overrides nur dort,
+    wo Obsidian unnötig eingreift.
+ ************************************************************/
+
+
+/* ==========================================================
+   0. Basis: Schrift & Fließtext
+   ========================================================== */
+
+/* Sans-serif docutils-Stil (neutral, moderat) */
+/* Wenn du Serif willst, nimm die Zeile darunter */
+body {
+    font-family: system-ui, sans-serif;
+    /* Serif: font-family: "EB Garamond", "Garamond", "Georgia", serif; */
+    line-height: 1.55;
+    font-size: 16px;
+}
+
+/* Absatzabstand wie bei docutils */
+.markdown-preview-view p {
+    margin: 1em 0;
+}
+
+
+/* ==========================================================
+   1. Überschriften (Preview)
+   ========================================================== */
+
+/* Erst alle Obsidian-Defaults neutralisieren */
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
+
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+/* docutils-typische Abstände und Größen */
+.markdown-preview-view h1 {
+    margin-top: 2.8em;
+    margin-bottom: 1.2em;
+    font-size: 1.8em;
+}
+
+.markdown-preview-view h2 {
+    margin-top: 2.2em;
+    margin-bottom: 1.0em;
+    font-size: 1.55em;
+}
+
+.markdown-preview-view h3 {
+    margin-top: 1.8em;
+    margin-bottom: 0.8em;
+    font-size: 1.35em;
+}
+
+.markdown-preview-view h4 {
+    margin-top: 1.4em;
+    margin-bottom: 0.6em;
+    font-size: 1.20em;
+}
+
+.markdown-preview-view h5 {
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+    font-size: 1.05em;
+}
+
+.markdown-preview-view h6 {
+    margin-top: 1.0em;
+    margin-bottom: 0.4em;
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+
+/* ==========================================================
+   2. Überschriften (Live-Editor / CM6)
+   ========================================================== */
+
+/* CM6 erzeugt fragmentierte <span>-Strukturen.
+   Wir setzen die Abstände über margin-top/bottom. */
+
+.cm-header-1 {
+    font-size: 1.8em !important;
+    margin-top: 2.8em !important;
+    margin-bottom: 1.2em !important;
+}
+
+.cm-header-2 {
+    font-size: 1.55em !important;
+    margin-top: 2.2em !important;
+    margin-bottom: 1.0em !important;
+}
+
+.cm-header-3 {
+    font-size: 1.35em !important;
+    margin-top: 1.8em !important;
+    margin-bottom: 0.8em !important;
+}
+
+.cm-header-4 {
+    font-size: 1.20em !important;
+    margin-top: 1.4em !important;
+    margin-bottom: 0.6em !important;
+}
+
+.cm-header-5 {
+    font-size: 1.05em !important;
+    margin-top: 1.2em !important;
+    margin-bottom: 0.5em !important;
+}
+
+.cm-header-6 {
+    font-size: 0.95em !important;
+    margin-top: 1.0em !important;
+    margin-bottom: 0.4em !important;
+}
+
+
+/* ==========================================================
+   3. Listen (unordered / ordered)
+   ========================================================== */
+
+/* docutils: Listenelemente mit klaren vertikalen Abständen */
+.markdown-preview-view ul,
+.markdown-preview-view ol {
+    margin: 1em 0;
+    padding-left: 2em; /* klassisch */
+}
+
+.markdown-preview-view li {
+    margin: 0.4em 0;
+}
+
+/* Editor-Abstände */
+.cm-line.HyperMD-list-line {
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+
+/* ==========================================================
+   4. Blockquotes – docutils Stil
+   ========================================================== */
+
+.markdown-preview-view blockquote {
+    border-left: 3px solid var(--text-muted);
+    margin: 1.4em 0;
+    padding: 0.4em 1em;
+    color: var(--text-normal);
+    font-style: italic;
+    background-color: var(--background-secondary);
+}
+
+
+/* ==========================================================
+   5. Tabellen (schlichte docutils-artige Tabellen)
+   ========================================================== */
+
+.markdown-preview-view table {
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    width: auto;
+}
+
+.markdown-preview-view th,
+.markdown-preview-view td {
+    border: 1px solid var(--background-modifier-border);
+    padding: 0.4em 0.6em;
+}
+
+.markdown-preview-view th {
+    background-color: var(--background-secondary);
+    font-weight: 600;
+}
+
+
+/* ==========================================================
+   6. Code (inline & fenced) – neutraler docutils Style
+   ========================================================== */
+
+.markdown-preview-view code {
+    padding: 0.15em 0.3em;
+    background-color: var(--background-secondary);
+    border-radius: 4px;
+    font-size: 0.95em;
+}
+
+.markdown-preview-view pre code {
+    padding: 0;
+    background: none;
+}
+
+/* Fenced blocks */
+.markdown-preview-view pre {
+    padding: 1em;
+    background: var(--background-secondary);
+    border-radius: 6px;
+    border: 1px solid var(--background-modifier-border);
+    font-size: 0.90em;
+}
+
+
+/* ==========================================================
+   7. Feinheiten & Polishing
+   ========================================================== */
+
+/* Entfernt übertriebenen Abstand vor horizontal rules */
+.markdown-preview-view hr {
+    margin: 2em 0;
+}
+
+/* Gute Absatzbreite (ähnlich docutils HTML output) */
+.markdown-preview-view {
+    max-width: 750px;
+    margin: auto;
+}
