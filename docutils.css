@@ -1,9 +1,14 @@
+/* Overall choice of a serif font */
+
+/* The actual content: */
 .cm-editor .cm-content {
     font-family: serif;
 }
+/* The title line: */
 div.cm-sizer div.inline-title {
     font-family: serif;
 }
+/* All content in preview mode: */
 .markdown-preview-view {
     font-family: serif;
 }
@@ -16,12 +21,12 @@ div.cm-sizer div.inline-title {
 
 /* Headlines */
 
-.markdown-preview-view h1 { margin: 0.67em 0 !important; }
-.markdown-preview-view h2 { margin: 0.83em 0 !important; }
-.markdown-preview-view h3 { margin: 1.00em 0 !important; }
-.markdown-preview-view h4 { margin: 1.33em 0 !important; }
-.markdown-preview-view h5 { margin: 1.67em 0 !important; }
-.markdown-preview-view h6 { margin: 2.33em 0 !important; }
+.markdown-preview-view h1 { margin: 0.57em 0 !important; }
+.markdown-preview-view h2 { margin: 0.76em 0 !important; }
+.markdown-preview-view h3 { margin: 0.94em 0 !important; }
+.markdown-preview-view h4 { margin: 1.11em 0 !important; }
+.markdown-preview-view h5 { margin: 1.35em 0 !important; }
+.markdown-preview-view h6 { margin: 1.61em 0 !important; }
 /* The ``!important`` is required because in some obscure cases Obsidian
  * adds ``margin-top: var(--heading-spacing);``
  */
@@ -29,17 +34,15 @@ div.cm-sizer div.inline-title {
 div.HyperMD-header.cm-line {
     --p-spacing: 0;
 }
-div.HyperMD-header-1.HyperMD-header.cm-line { padding: 0.67em 0; }
-div.HyperMD-header-2.HyperMD-header.cm-line { padding: 0.83em 0; }
-div.HyperMD-header-3.HyperMD-header.cm-line { padding: 1.00em 0; }
-div.HyperMD-header-4.HyperMD-header.cm-line { padding: 1.33em 0; }
-div.HyperMD-header-5.HyperMD-header.cm-line { padding: 1.67em 0; }
-div.HyperMD-header-6.HyperMD-header.cm-line { padding: 2.33em 0; }
+div.HyperMD-header.cm-line + .cm-line { padding-top: 1.11em !important; }
+div.HyperMD-header-1.HyperMD-header.cm-line { padding-top: 0.57em !important; }
+div.HyperMD-header-2.HyperMD-header.cm-line { padding-top: 0.76em !important; }
+div.HyperMD-header-3.HyperMD-header.cm-line { padding-top: 0.94em !important; }
+div.HyperMD-header-4.HyperMD-header.cm-line { padding-top: 1.11em !important; }
+div.HyperMD-header-5.HyperMD-header.cm-line { padding-top: 1.35em !important; }
+div.HyperMD-header-6.HyperMD-header.cm-line { padding-top: 1.61em !important; }
 
-br { font-size: 0; }
-
-div.cm-line:has(> br:only-child) {
-    line-height: 0 !important;
+div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
     height: 0 !important;
     padding: 0 !important;
     margin: 0 !important;
