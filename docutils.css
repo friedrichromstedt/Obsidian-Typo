@@ -34,19 +34,26 @@ div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
 
 /* Reduced font size for code elements ... */
 
+/* Inline ``code`` elements: */
 .markdown-preview-view code {
     font-size: 75%;
 }
+/* ``code`` elements in listings are surrounded by ``pre`` elements: */
 .markdown-preview-view pre code {
     font-size: 85%;
 }
+/* Removing an unneeded margin above/below ``pre`` elements: */
 .markdown-preview-view pre {
     margin: 0;
 }
 
+/* In live mode, inline code sequences are ``span.cm-inline-code``
+ * elements: */
 .cm-editor .cm-content span.cm-inline-code {
     font-size: 75%;
 }
+/* The live-mode equivalent to ``pre`` elements are
+ * ``div.HyperMD-codeblock`` elements: */
 .cm-editor .cm-content div.HyperMD-codeblock {
     font-size: 85%;
 }
