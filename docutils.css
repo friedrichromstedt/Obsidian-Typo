@@ -63,9 +63,6 @@ div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
  * adds ``margin-top: var(--heading-spacing);``
  */
 
-div.HyperMD-header.cm-line {
-    --p-spacing: 0;
-}
 div.HyperMD-header.cm-line + .cm-line { padding-top: 1.00em !important; }
 div.HyperMD-header-1.HyperMD-header.cm-line { padding-top: 0.62em !important; }
 div.HyperMD-header-2.HyperMD-header.cm-line { padding-top: 0.68em !important; }
