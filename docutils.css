@@ -22,8 +22,11 @@ div.cm-sizer div.inline-title {
 }
 
 /* In live mode, paragraphs are separted by blank lines: */
-div.cm-line:has(> br:only-child):has(+ .cm-line) {
+div.cm-line:has(> br:only-child) {
     font-size: 40%;
+}
+div.cm-line.cm-active:has(> br:only-child) {
+    font-size: 100%;
 }
 
 /* This is a special unavoidable blank line heading tables: */
