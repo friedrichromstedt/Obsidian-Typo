@@ -1,24 +1,64 @@
 /* Overall choice of a serif font ... */
 
-/* The actual content: */
-.cm-editor .cm-content {
-    font-family: serif;
+/* In preview mode: */
+div.markdown-preview-view {
+    --font-text: serif;
 }
-/* The title line: */
-div.cm-sizer div.inline-title {
-    font-family: serif;
+
+/* In live mode: */
+div.cm-editor {
+    --font-text: serif;  /* For the default theme */
+    font-family: serif;  /* For kepano's Minimal theme */
 }
-/* All content in preview mode: */
-.markdown-preview-view {
-    font-family: serif;
+
+/* Inline title ... */
+
+div.inline-title {
+    margin-bottom: 0;  /* Override a nonzero default value */
 }
 
 /* Margin around paragraphs, ol, and ul ... */
 
+/* Variant A: Margin around each list item: */
+
+/*
 .markdown-preview-view p,
+.markdown-preview-view li {
+    margin: 0.4em 0;
+}
+.markdown-preview-view ol,
+.markdown-preview-view ul {
+    margin: 0;
+}
+
+div.HyperMD-list-line {
+    padding-top: 0.4em !important;
+    padding-bottom: 0 !important;
+}
+div.HyperMD-list-line:not(:has(+ div.HyperMD-list-line)) {
+    padding-bottom: 0.4em !important;
+}
+*/
+
+/* Variant B: Margin only around the entire lists: */
+
+.markdown-preview-view p {
+    margin: 0.4em 0;
+}
 .markdown-preview-view ol,
 .markdown-preview-view ul {
     margin: 0.4em 0;
+}
+
+div.HyperMD-list-line {
+    padding-top: 0.4em !important;
+}
+div.HyperMD-list-line + div.HyperMD-list-line {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+div.HyperMD-list-line:not(:has(+ div.HyperMD-list-line)) {
+    padding-bottom: 0.4em !important;
 }
 
 /* In live mode, paragraphs are separted by blank lines: */
@@ -80,3 +120,33 @@ div.HyperMD-header-3.HyperMD-header.cm-line { padding-top: 0.76em !important; }
 div.HyperMD-header-4.HyperMD-header.cm-line { padding-top: 0.84em !important; }
 div.HyperMD-header-5.HyperMD-header.cm-line { padding-top: 0.93em !important; }
 div.HyperMD-header-6.HyperMD-header.cm-line { padding-top: 1.00em !important; }
+
+
+body {
+    --h1-size: 1.618em;
+    --h2-size: 1.462em;
+    --h3-size: 1.318em;
+    --h4-size: 1.118em;
+    --h5-size: 1.076em;
+    --h6-size: 1em;
+
+    --h1-weight: 600;
+    --h2-weight: 600;
+    --h3-weight: 600;
+    --h4-weight: 600;
+    --h5-weight: 600;
+    --h6-weight: 600;
+
+    --h1-variant: normal;
+    --h2-variant: normal;
+    --h3-variant: normal;
+    --h4-variant: normal;
+    --h5-variant: normal;
+    --h6-variant: normal;
+}
+
+/* Checklists ... */
+
+body {
+    --checklist-done-decoration: none;
+}
