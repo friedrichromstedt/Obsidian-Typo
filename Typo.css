@@ -51,7 +51,7 @@ div.HyperMD-list-line + div.HyperMD-list-line {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
 }
-div.HyperMD-list-line:not(:has(+ div.HyperMD-list-line)) {
+div.HyperMD-list-line:not(:has(+ div.HyperMD-list-line)):not(:has(+ div.HyperMD-header)){
     padding-bottom: 0.4em !important;
 }
 
