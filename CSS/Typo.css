@@ -73,7 +73,7 @@ div.cm-line.cm-active:has(> br:only-child) {
 
 /* This is a special unavoidable blank line heading tables: */
 div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
-    font-size: 40%;
+    font-size: 30%;
     height: 0 !important;
 }
 
