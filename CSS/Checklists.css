@@ -22,8 +22,8 @@ MIT license:
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
 
-I (Friedrich Romstedt) commented-out a the strike-through declaration of
-the *cancelled* ('-') checkmark icon specification and added some variable
+I (Friedrich Romstedt) overrided a the strike-through declaration of the
+*cancelled* ('-') checkmark icon specification and added some variable
 substitutions right here at the top.
 */
 
@@ -194,6 +194,7 @@ body:not(.tasks) .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task]:is(
 body:not(.tasks) .markdown-preview-view ul li[data-task="-"].task-list-item.is-checked,
 body:not(.tasks) li[data-task="-"].task-list-item.is-checked {
   color: var(--text-faint);
+  text-decoration: inherit;
   /* text-decoration: line-through solid var(--text-faint) 1px; */
 }
 
