@@ -77,6 +77,10 @@ div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
     height: 0 !important;
 }
 
+/* Background of code elements ... */
+
+body { --code-background: #ededed; }
+
 /* Reduced font size for code elements ... */
 
 /* Inline ``code`` elements: */
