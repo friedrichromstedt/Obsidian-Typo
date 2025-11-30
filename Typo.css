@@ -3,12 +3,14 @@
 /* In preview mode: */
 div.markdown-preview-view {
     --font-text: serif;
+    text-align: justify;
 }
 
 /* In live mode: */
 div.cm-editor {
     --font-text: serif;  /* For the default theme */
     font-family: serif;  /* For kepano's Minimal theme */
+    text-align: justify;
 }
 
 /* Margin around paragraphs, ol, and ul ... */
@@ -44,20 +46,9 @@ div.HyperMD-list-line:not(:has(+ div.HyperMD-list-line)) {
     margin: 0.4em 0;
 }
 
-div.HyperMD-list-line {
-    padding-top: 0.4em !important;
-}
-div.HyperMD-list-line + div.HyperMD-list-line {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-}
-div.HyperMD-list-line:not(:has(+ div.HyperMD-list-line)):not(:has(+ div.HyperMD-header)){
-    padding-bottom: 0.4em !important;
-}
-
 /* In live mode, paragraphs are separted by blank lines: */
 div.cm-line:has(> br:only-child) {
-    font-size: 40%;
+    font-size: 30%;
 }
 div.cm-line.cm-active:has(> br:only-child) {
     font-size: 100%;
