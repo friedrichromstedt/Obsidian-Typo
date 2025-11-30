@@ -3,14 +3,30 @@
 /* In preview mode: */
 div.markdown-preview-view {
     --font-text: serif;
-    text-align: justify;
 }
 
 /* In live mode: */
 div.cm-editor {
     --font-text: serif;  /* For the default theme */
     font-family: serif;  /* For kepano's Minimal theme */
+}
+
+/* Justifying ordinary text ... */
+
+/* Reading mode: */
+div.markdown-preview-view {
     text-align: justify;
+}
+div.markdown-preview-view pre {
+    text-align: left;
+}
+
+/* Editing mode: */
+div.cm-editor {
+    text-align: justify;
+}
+div.HyperMD-codeblock {
+    text-align: left;
 }
 
 /* Margin around paragraphs, ol, and ul ... */
