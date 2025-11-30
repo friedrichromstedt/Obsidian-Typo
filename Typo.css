@@ -131,8 +131,8 @@ div.HyperMD-header.cm-line + .cm-line { padding-top: 1.00em !important; }
     /* Any headline which *isn't the first line* in the document shall
      * implement its part of headline-related whitespace by setting its
      * ``padding-top``.  The "padding-bottom" for the *last* headline in a
-     * stack of headlines is "delegated" to the rule in the previous
-     * section. */
+     * stack of headlines is "delegated" to the .cm-line selected in the
+     * previous section. */
 
 body {
     --h1-size: 1.618em;
