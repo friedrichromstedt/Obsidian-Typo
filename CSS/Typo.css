@@ -14,7 +14,8 @@ div.cm-editor {
 /* Justifying ordinary text ... */
 
 /* Reading mode: */
-div.markdown-preview-view {
+div.markdown-preview-view,
+ol > li, ul > li {
     text-align: justify;
 }
 div.markdown-preview-view pre {
