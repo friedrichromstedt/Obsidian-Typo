@@ -87,7 +87,7 @@ div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
 
 /* Background of code elements ... */
 
-body { --code-background: #ededed; }
+body { --code-background: #f2f2f2; }
 
 /* Reduced font size for code elements ... */
 
