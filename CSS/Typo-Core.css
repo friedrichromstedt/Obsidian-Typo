@@ -109,6 +109,9 @@ body { --code-background: #ededed; }
 .cm-editor .cm-content span.cm-inline-code {
     font-size: 75%;
 }
+.cm-editor .cm-content span.cm-header.cm-inline-code {
+    font-size: 75% !important;
+}
 /* The live-mode equivalent to ``pre`` elements are
  * ``div.HyperMD-codeblock`` elements: */
 .cm-editor .cm-content div.HyperMD-codeblock {
