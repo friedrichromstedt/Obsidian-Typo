@@ -32,7 +32,7 @@ div.markdown-preview-view pre {
 
 /* Editing mode: */
 div.cm-editor {
-    text-align: justify;
+    text-align: justify !important;
 }
 div.HyperMD-codeblock {
     text-align: left;
