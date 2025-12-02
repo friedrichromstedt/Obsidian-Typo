@@ -19,25 +19,6 @@ body {
     --line-height-normal: 1.35;
 }
 
-/* Justifying ordinary text ... */
-
-/* Reading mode: */
-div.markdown-preview-view,
-ol > li, ul > li {
-    text-align: justify;
-}
-div.markdown-preview-view pre {
-    text-align: left;
-}
-
-/* Editing mode: */
-div.cm-editor {
-    text-align: justify;
-}
-div.HyperMD-codeblock {
-    text-align: left;
-}
-
 /* Margin around paragraphs, ol, and ul ... */
 
 /* Variant A: Margin around each list item: */
@@ -133,6 +114,9 @@ body { --code-background: #f2f2f2; }
 
 /* Headlines ... */
 
+/* Set *margin* around headlines *in reading mode*.  Here, things are
+ * rather simple because ``margin`` can be used, which will collapse as
+ * needed. */
 .markdown-preview-view h1 { margin: 0.62em 0 !important; }
 .markdown-preview-view h2 { margin: 0.68em 0 !important; }
 .markdown-preview-view h3 { margin: 0.76em 0 !important; }
@@ -143,7 +127,8 @@ body { --code-background: #f2f2f2; }
      * Obsidian adds ``margin-top: var(--heading-spacing);``
      */
 
-/* Implementation of consistent whitespace around headlines: */
+/* Implementation of consistent whitespace around headlines in reading
+ * mode: */
 div.inline-title { margin-bottom: 0.62em; }
     /* Choose a ``margin-bottom`` for the inline title similar to h1.  In
      * preview mode, this will collapse with possible margins at the top of
@@ -183,6 +168,7 @@ div.HyperMD-header + div.cm-line:has(> br:only-child):not(.cm-active) + div.Hype
     padding-top: 0 !important;
 }
 
+/* Set size, weight and variant to the default theme's values: */
 body {
     --h1-size: 1.618em;
     --h2-size: 1.462em;
