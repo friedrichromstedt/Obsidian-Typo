@@ -1,0 +1,10 @@
+{
+  "cssTheme": "Minimal",
+  "enabledCssSnippets": [
+    "Typo",
+    "Tables",
+    "Checklists",
+    "Typo-Checklists",
+    "Typo-Core"
+  ]
+}

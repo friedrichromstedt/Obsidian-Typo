@@ -1,0 +1,201 @@
+/* Developed since: November 2025 */
+
+/* Overall choice of a serif font ... */
+
+/* In preview mode: */
+div.markdown-preview-view {
+    --font-text: serif;
+}
+
+/* In live mode: */
+div.cm-editor {
+    --font-text: serif;  /* For the default theme */
+    font-family: serif;  /* For kepano's Minimal theme */
+}
+
+/* Setting the line height ... */
+
+body {
+    --line-height-normal: 1.35;
+}
+
+/* Margin around paragraphs, ol, and ul ... */
+
+/* Variant A: Margin around each list item: */
+
+/*
+.markdown-preview-view p,
+.markdown-preview-view li {
+    margin: 0.4em 0;
+}
+.markdown-preview-view ol,
+.markdown-preview-view ul {
+    margin: 0;
+}
+
+div.HyperMD-list-line {
+    padding-top: 0.4em !important;
+    padding-bottom: 0 !important;
+}
+div.HyperMD-list-line:not(:has(+ div.HyperMD-list-line)) {
+    padding-bottom: 0.4em !important;
+}
+*/
+
+/* Variant B: Margin only around the entire lists: */
+
+.markdown-preview-view p {
+    margin: 0.4em 0;
+}
+.markdown-preview-view ol,
+.markdown-preview-view ul {
+    margin: 0.4em 0;
+}
+
+/* In editing mode, paragraphs are separated by blank lines: */
+div.cm-line:has(> br:only-child) {
+    font-size: 30%;
+}
+div.cm-line.cm-active:has(> br:only-child) {
+    font-size: 100%;
+}
+/* There is some subtle case where this will be overridden below: When a
+ * blank line follows a headline, without further styling it is reduced to
+ * 30% font-size, and it will receive the 1em padding-top from the
+ * headline rules below.  On the other hand, when there is *no* such blank
+ * line following the headline present, the next line of text will *also*
+ * obtain the 1em padding-top.  Thus, the following behaviour results when
+ * entering blank lines below a headline: 1. The cursor will offset to the
+ * headline by 1em of standard height, as intended. 2. When hitting enter
+ * once more, the resulting first blank line will transform as described to
+ * 30% with 1em of padding-top (of this 30%), so the cursor will
+ * effectively move *upwards* a little bit. */
+
+/* This is a special unavoidable blank line heading tables: */
+div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
+    font-size: 30%;
+    height: 0 !important;
+}
+
+/* Background of code elements ... */
+
+body { --code-background: #f2f2f2; }
+
+/* Reduced font size for code elements ... */
+
+/* Inline ``code`` elements: */
+.markdown-preview-view code {
+    font-size: 75%;
+}
+/* ``code`` elements in listings are surrounded by ``pre`` elements: */
+.markdown-preview-view pre code {
+    font-size: 75%;
+}
+/* Removing an unneeded margin above/below ``pre`` elements: */
+.markdown-preview-view pre {
+    margin: 0;
+}
+
+/* In live mode, inline code sequences are ``span.cm-inline-code``
+ * elements: */
+.cm-editor .cm-content span.cm-inline-code {
+    font-size: 75%;
+}
+.cm-editor .cm-content span.cm-header.cm-inline-code {
+    font-size: 75% !important;
+}
+/* The live-mode equivalent to ``pre`` elements are
+ * ``div.HyperMD-codeblock`` elements: */
+.cm-editor .cm-content div.HyperMD-codeblock {
+    font-size: 75%;
+}
+
+/* Overflow of code blocks goes beyond Obsidian ... */
+
+/* Headlines ... */
+
+/* Set *margin* around headlines *in reading mode*.  Here, things are
+ * rather simple because ``margin`` can be used, which will collapse as
+ * needed. */
+.markdown-preview-view h1 { margin: 0.62em 0 !important; }
+.markdown-preview-view h2 { margin: 0.68em 0 !important; }
+.markdown-preview-view h3 { margin: 0.76em 0 !important; }
+.markdown-preview-view h4 { margin: 0.84em 0 !important; }
+.markdown-preview-view h5 { margin: 0.93em 0 !important; }
+.markdown-preview-view h6 { margin: 1.00em 0 !important; }
+    /* The ``!important`` is required because in some obscure cases
+     * Obsidian adds ``margin-top: var(--heading-spacing);``
+     */
+
+/* Implementation of consistent whitespace around headlines in reading
+ * mode: */
+div.inline-title { margin-bottom: 0.62em; }
+    /* Choose a ``margin-bottom`` for the inline title similar to h1.  In
+     * preview mode, this will collapse with possible margins at the top of
+     * the document, and in live mode it will behave as if it was a
+     * padding. */
+div.HyperMD-header.cm-line { padding-top: 0 !important; }
+    /* When the document *starts* with a headline, its ``padding-top``
+     * shall vanish (the padding is provided by ``margin-bottom`` of the
+     * inline title element located right above it). */
+div.HyperMD-header.cm-line + .cm-line { padding-top: 1.00em !important; }
+    /* Any (ordinary) .cm-line following a headline shall distance itself
+     * by 1em from the headline.  This also matches headlines directly
+     * following headlines, where it is overridden by the following rules.
+     * */
+.cm-line + div.HyperMD-header-1.HyperMD-header.cm-line { padding-top: 0.62em !important; }
+.cm-line + div.HyperMD-header-2.HyperMD-header.cm-line { padding-top: 0.68em !important; }
+.cm-line + div.HyperMD-header-3.HyperMD-header.cm-line { padding-top: 0.76em !important; }
+.cm-line + div.HyperMD-header-4.HyperMD-header.cm-line { padding-top: 0.84em !important; }
+.cm-line + div.HyperMD-header-5.HyperMD-header.cm-line { padding-top: 0.93em !important; }
+.cm-line + div.HyperMD-header-6.HyperMD-header.cm-line { padding-top: 1.00em !important; }
+    /* Any headline which *isn't the first line* in the document shall
+     * implement its part of headline-related whitespace by setting its
+     * ``padding-top``.  The "padding-bottom" for the *last* headline in a
+     * stack of headlines is "delegated" to the .cm-line selected in the
+     * previous section. */
+
+/* Use empty lines following a headline as spacer, and re-use it also as
+ * spacer for following headlines.  However, when the empty cm-line *has
+ * the cursor*, then do not match it (treat it effectively as a line with
+ * text). */
+div.HyperMD-header + div.cm-line:has(> br:only-child):not(.cm-active) {
+    font-size: 100%;
+    line-height: 1.0;
+    padding-top: 0 !important;
+}
+div.HyperMD-header + div.cm-line:has(> br:only-child):not(.cm-active) + div.HyperMD-header {
+    padding-top: 0 !important;
+}
+
+/* Set size, weight and variant to the default theme's values: */
+body {
+    --h1-size: 1.618em;
+    --h2-size: 1.462em;
+    --h3-size: 1.318em;
+    --h4-size: 1.118em;
+    --h5-size: 1.076em;
+    --h6-size: 1em;
+
+    --h1-weight: 600;
+    --h2-weight: 600;
+    --h3-weight: 600;
+    --h4-weight: 600;
+    --h5-weight: 600;
+    --h6-weight: 600;
+
+    --h1-variant: normal;
+    --h2-variant: normal;
+    --h3-variant: normal;
+    --h4-variant: normal;
+    --h5-variant: normal;
+    --h6-variant: normal;
+}
+
+/* Checklists ... */
+
+body {
+    --checklist-done-decoration: none;
+    --checkbox-radius: 50%;
+        /* Turns the boundary of checkmarks into circles. */
+}
