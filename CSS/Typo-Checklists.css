@@ -31,8 +31,6 @@ body {
     --background-modifier-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
         /* Used as the background colour of '/' (*incomplete*) checkmark
          * icons. */
-    --checkbox-radius: 50%;
-        /* Turns the boundary of checkmarks into circles. */
 }
 
 /* Checklist icons */
