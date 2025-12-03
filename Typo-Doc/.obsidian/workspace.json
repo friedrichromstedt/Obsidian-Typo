@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "0300 Installation.md",
+                "file": "0200 Functionality.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0300 Installation"
+              "title": "0200 Functionality"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "0300 Installation.md",
+                "file": "0200 Functionality.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 0300 Installation"
+              "title": "Outline of 0200 Functionality"
             }
           }
         ],
@@ -187,6 +187,7 @@
   "active": "2e80ca7a04a6c30f",
   "lastOpenFiles": [
     "0300 Installation.md",
+    "x.html",
     "0050 Table of Contents.md",
     "0200 Functionality.md",
     "0100 Introduction.md",

@@ -33,7 +33,7 @@ Headlines are provided automatically above and below them with 1em of whitespace
 
 This behaviour is implemented not using obscure exeptions and conditions, but is a result of design. However, whitespace around headlines is the most intricate section of the codes in *Obsidian-Typo*.
 
-As a result, existing markdown headlines will format properly with *Obsidian-Typo* in most cases just from the beginning. I found it customary in many places to surround headlines by an empty line below, where I didn't see *any* whitespace before, and then also by a blank line *above*, to keep the whitespace *above* larger than the one *below*. Such tweaks are not required with *Obsidian-Typo*, but their existence in markdown texts won't disrupt the result when the text will be subjected to *Obsidian-Typo* rendering for the first time.
+As a result, existing markdown headlines will format properly with *Obsidian-Typo* in most cases just from the beginning. Before having *Obsidian-Typo* at hand, I found it customary in many places to surround headlines by an empty line below, where I didn't see *any* whitespace before, and then also by a blank line *above*, to keep the whitespace *above* larger than the one *below*. Such tweaks are not required with *Obsidian-Typo*, but their existence in markdown texts won't disrupt the result when the text will be subjected to *Obsidian-Typo* rendering for the first time.
 ## 3.3 Tables
 In the current version of Obsidian (v1.10.6), tables are inevitably preceded by an empty line. *Obsidian-Typo* limits the effect of this blank line by reducing its height to zero. The *font size* is however set to 30% of the surrounding text. It is still possible to enter this empty line with the cursor; the cursor will be shown with 30% of its default size. This tweak should turn into a no-op automatically when the issue might be fixed upstream.
 ## 3.4 Enumerations and Itemisations
@@ -48,7 +48,7 @@ To meet the markdown specs, a blank line is thus required just beneath the last 
 
 In reading mode, corresponding whitespace around the block of list items will be rendered automatically, yielding the same layout as resulting from a *blank line* in editing mode. *Between* list items *no* additional whitespace is produced in reading mode.
 # 4 Check List Icons
-*Obsidian-Typo* comes with a Stylesheet which is a section of kepano's *Minimal* theme, defining various icon names which can be used in checklists.
+*Obsidian-Typo* comes with a stylesheet which is a section of kepano's *Minimal* theme, defining various icon names which can be used in checklists.
 
 Different from the default theme, checklist items are provided with a circular shape, as in the *Minimal* theme as well.
 
