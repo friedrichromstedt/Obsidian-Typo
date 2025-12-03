@@ -59,8 +59,8 @@ In Windows, the situation is similar to the macOS one: *Either* you use the Expl
 In the Explorer, the `.obsidian` folder can be revealed by:
 
 1. Moving into the vault folder;
-2. clicking into the address bar;
-3. appending `/.obsidian` to the "addresss" and pressing enter.
+2. clicking into the address bar, eiter at its left or the right side (avoiding the section consisting of buttons);
+3. appending `\.obsidian` to the "address", and pressing enter.
 
 Now, the internals of the `.obsidian` folder are accessible. Copy over files as needed.
 ## 3.5 Linux
