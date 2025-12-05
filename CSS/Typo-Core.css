@@ -74,6 +74,10 @@ div.cm-line.cm-active:has(> br:only-child) {
 /* This is a special unavoidable blank line preceding tables: */
 div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
     font-size: 38%;
+        /* Without this declaration, ``font-size: 100%`` from the
+         * ``.cm-active`` rule would be applied.  I like it better when the
+         * cursor is *reduced in size* while in the blank line selected
+         * here.  The value 100% would work as well. */
     height: 0 !important;
 }
 
