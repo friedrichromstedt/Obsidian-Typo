@@ -13,10 +13,18 @@ div.cm-editor {
     font-family: serif;  /* For kepano's Minimal theme */
 }
 
-/* Setting the line height ... */
+/* Variables to control vertical whitespace ... */
 
 body {
     --line-height-normal: 1.35;
+        /* This variable is provided by Obsidian. */
+    --font-size-blank-line: 38%;
+        /* Used for blank lines in continuous text.  The actual size in em
+         * depends also on the line height; this is intended behaviour. */
+
+    --margin-blank-line: 0.513em;
+        /* var(--font-size-blank-line) * var(--line-height-normal) */
+        /* Needs to be maintained manually. */
 }
 
 /* Margin around paragraphs, ol, and ul ... */
@@ -45,35 +53,39 @@ div.HyperMD-list-line:not(:has(+ div.HyperMD-list-line)) {
 /* Variant B: Margin only around the entire lists: */
 
 .markdown-preview-view p {
-    margin: 0.4em 0;
+    margin: var(--margin-blank-line) 0;
 }
 .markdown-preview-view ol,
 .markdown-preview-view ul {
-    margin: 0.4em 0;
+    margin: var(--margin-blank-line) 0;
 }
 
 /* In editing mode, paragraphs are separated by blank lines: */
 div.cm-line:has(> br:only-child) {
-    font-size: 38%;
+    font-size: var(--font-size-blank-line);
 }
 div.cm-line.cm-active:has(> br:only-child) {
     font-size: 100%;
 }
 /* There is some subtle case where this will be overridden below: When a
  * blank line follows a headline, without further styling it is reduced to
- * 40% font-size, and it will receive the 1em padding-top from the
+ * 38% font-size, and it will receive the 1em padding-top from the
  * headline rules below.  On the other hand, when there is *no* such blank
  * line following the headline present, the next line of text will *also*
  * obtain the 1em padding-top.  Thus, the following behaviour results when
  * entering blank lines below a headline: 1. The cursor will offset to the
  * headline by 1em of standard height, as intended. 2. When hitting enter
  * once more, the resulting first blank line will transform as described to
- * 40% with 1em of padding-top (of this 40%), so the cursor will
+ * 38% with 1em of padding-top (of this 38%), so the cursor will
  * effectively move *upwards* a little bit. */
 
 /* This is a special unavoidable blank line preceding tables: */
 div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
-    font-size: 38%;
+    font-size: var(--font-size-blank-line);
+        /* Without this declaration, ``font-size: 100%`` from the
+         * ``.cm-active`` rule would be applied.  I like it better when the
+         * cursor is *reduced in size* while in the blank line selected
+         * here.  The value 100% would work as well. */
     height: 0 !important;
 }
 
