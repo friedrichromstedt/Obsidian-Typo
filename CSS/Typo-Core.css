@@ -13,10 +13,18 @@ div.cm-editor {
     font-family: serif;  /* For kepano's Minimal theme */
 }
 
-/* Setting the line height ... */
+/* Variables to control vertical whitespace ... */
 
 body {
     --line-height-normal: 1.35;
+        /* This variable is provided by Obsidian. */
+    --font-size-blank-line: 38%;
+        /* Used for blank lines in continuous text.  The actual size in em
+         * depends also on the line height; this is intended behaviour. */
+
+    --margin-blank-line: 0.513em;
+        /* var(--font-size-blank-line) * var(--line-height-normal) */
+        /* Needs to be maintained manually. */
 }
 
 /* Margin around paragraphs, ol, and ul ... */
@@ -45,16 +53,16 @@ div.HyperMD-list-line:not(:has(+ div.HyperMD-list-line)) {
 /* Variant B: Margin only around the entire lists: */
 
 .markdown-preview-view p {
-    margin: 0.4em 0;
+    margin: var(--margin-blank-line) 0;
 }
 .markdown-preview-view ol,
 .markdown-preview-view ul {
-    margin: 0.4em 0;
+    margin: var(--margin-blank-line) 0;
 }
 
 /* In editing mode, paragraphs are separated by blank lines: */
 div.cm-line:has(> br:only-child) {
-    font-size: 38%;
+    font-size: var(--font-size-blank-line);
 }
 div.cm-line.cm-active:has(> br:only-child) {
     font-size: 100%;
@@ -73,7 +81,7 @@ div.cm-line.cm-active:has(> br:only-child) {
 
 /* This is a special unavoidable blank line preceding tables: */
 div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
-    font-size: 38%;
+    font-size: var(--font-size-blank-line);
         /* Without this declaration, ``font-size: 100%`` from the
          * ``.cm-active`` rule would be applied.  I like it better when the
          * cursor is *reduced in size* while in the blank line selected
