@@ -6,5 +6,6 @@
     "Checklists",
     "Typo-Checklists",
     "Typo-Core"
-  ]
+  ],
+  "baseFontSize": 18
 }

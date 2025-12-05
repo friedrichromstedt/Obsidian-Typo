@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e982853b715da627",
+        "id": "05a326244aafe1b9",
         "type": "tabs",
         "children": [
           {
-            "id": "2e80ca7a04a6c30f",
+            "id": "3f8e5049ab98c0de",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "0200 Functionality.md",
+                "file": "0400 Notes on the Implementation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0200 Functionality"
+              "title": "0400 Notes on the Implementation"
             }
           }
         ]
@@ -156,13 +156,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "0200 Functionality.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 0200 Functionality"
+              "title": "Outline"
             }
           }
         ],
@@ -184,13 +183,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "2e80ca7a04a6c30f",
+  "active": "3f8e5049ab98c0de",
   "lastOpenFiles": [
+    "0200 Functionality.md",
+    "0400 Notes on the Implementation.md",
+    "0100 Introduction.md",
+    "0050 Table of Contents.md",
     "0300 Installation.md",
     "x.html",
-    "0050 Table of Contents.md",
-    "0200 Functionality.md",
-    "0100 Introduction.md",
     "XXX.md",
     "Welcome.md"
   ]
