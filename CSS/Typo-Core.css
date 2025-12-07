@@ -139,8 +139,8 @@ body { --code-background: #f2f2f2; }
      * Obsidian adds ``margin-top: var(--heading-spacing);``
      */
 
-/* Implementation of consistent whitespace around headlines in reading
- * mode: */
+/* Implementation of consistent whitespace around headlines in live mode:
+ * */
 div.inline-title { margin-bottom: 0.62em; }
     /* Choose a ``margin-bottom`` for the inline title similar to h1.  In
      * preview mode, this will collapse with possible margins at the top of
