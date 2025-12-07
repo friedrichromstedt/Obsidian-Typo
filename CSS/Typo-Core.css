@@ -61,10 +61,10 @@ div.HyperMD-list-line:not(:has(+ div.HyperMD-list-line)) {
 }
 
 /* In editing mode, paragraphs are separated by blank lines: */
-div.cm-line:has(> br:only-child) {
+div.cm-line:has(> br:only-child):not(.HyperMD-codeblock) {
     font-size: var(--font-size-blank-line);
 }
-div.cm-line.cm-active:has(> br:only-child) {
+div.cm-line.cm-active:has(> br:only-child):not(.HyperMD-codeblock) {
     font-size: 100%;
 }
 /* There is some subtle case where this will be overridden below: When a
