@@ -89,18 +89,20 @@ div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
     height: 0 !important;
 }
 
-/* Variables of code elements ... */
+/* Code elements ... */
 
 body {
     --code-background: #f2f2f2;
     --code-size: 75%;
 }
 
-/* Reduced font size for code elements ... */
-
-/* Removing an unneeded margin above/below ``pre`` elements: */
+/* Per preset, a vertical margin of ~1em is set.  I cannnot pinpoint the
+ * origin.  However, it is overridden here by the separation margin
+ * corresponding to blank lines.  N.B. that the ``pre`` element has the
+ * *same* font size as the continuous text; the reduction to
+ * ``--code-size`` happens in the contained ``code`` element. */
 .markdown-preview-view pre {
-    margin: 0;
+    margin: var(--margin-blank-line) 0;
 }
 
 /* In live mode, we need to override a rule from Obsidian selecting header
