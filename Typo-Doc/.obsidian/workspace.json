@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "05a326244aafe1b9",
+        "id": "ba19d1951b633546",
         "type": "tabs",
         "children": [
           {
-            "id": "3f8e5049ab98c0de",
+            "id": "b6cddd889bb41556",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -183,10 +183,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "3f8e5049ab98c0de",
+  "active": "b6cddd889bb41556",
   "lastOpenFiles": [
-    "0200 Functionality.md",
     "0400 Notes on the Implementation.md",
+    "0200 Functionality.md",
     "0100 Introduction.md",
     "0050 Table of Contents.md",
     "0300 Installation.md",
