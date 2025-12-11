@@ -98,14 +98,6 @@ body {
 
 /* Reduced font size for code elements ... */
 
-/* Inline ``code`` elements: */
-.markdown-preview-view code {
-    font-size: 75%;
-}
-/* ``code`` elements in listings are surrounded by ``pre`` elements: */
-.markdown-preview-view pre code {
-    font-size: 75%;
-}
 /* Removing an unneeded margin above/below ``pre`` elements: */
 .markdown-preview-view pre {
     margin: 0;
