@@ -89,9 +89,12 @@ div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
     height: 0 !important;
 }
 
-/* Background of code elements ... */
+/* Variables of code elements ... */
 
-body { --code-background: #f2f2f2; }
+body {
+    --code-background: #f2f2f2;
+    --code-size: 75%;
+}
 
 /* Reduced font size for code elements ... */
 
@@ -108,18 +111,12 @@ body { --code-background: #f2f2f2; }
     margin: 0;
 }
 
-/* In live mode, inline code sequences are ``span.cm-inline-code``
- * elements: */
-.cm-editor .cm-content span.cm-inline-code {
-    font-size: 75%;
-}
+/* In live mode, we need to override a rule from Obsidian selecting header
+ * lines, declaring ``font-size: inherit !important``, which override the
+ * non-``!important`` styles provided by Obsidian to implement
+ * ``--code-size`` */
 .cm-editor .cm-content span.cm-header.cm-inline-code {
-    font-size: 75% !important;
-}
-/* The live-mode equivalent to ``pre`` elements are
- * ``div.HyperMD-codeblock`` elements: */
-.cm-editor .cm-content div.HyperMD-codeblock {
-    font-size: 75%;
+    font-size: var(--code-size) !important;
 }
 
 /* Overflow of code blocks goes beyond Obsidian ... */
