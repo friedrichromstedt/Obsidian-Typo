@@ -64,35 +64,41 @@ div.HyperMD-list-line:not(:has(+ div.HyperMD-list-line)) {
 div.cm-line:has(> br:only-child):not(.HyperMD-codeblock) {
     font-size: var(--font-size-blank-line);
 }
-    /* There is some subtle case where this will be overridden below: When
-     * a blank line follows a headline, without further styling it is
-     * reduced to --font-size-blank-line, and it will receive the 1em
-     * padding-top from the headline rules below.  On the other hand, when
-     * there is *no* such blank line following the headline present, the
-     * next line of text will *also* obtain the 1em padding-top.  Thus, the
-     * following behaviour results when entering blank lines below a
-     * headline: 1. The cursor will offset to the headline by 1em of
-     * standard height, as intended. 2. When hitting enter once more, the
-     * resulting first blank line will transform as described to
-     * --font-size-blank-line with 1em of padding-top (of this
-     * --font-size-blank-line), so the cursor will effectively move
-     * *upwards* a little bit. */
 div.cm-line.cm-active:has(> br:only-child):not(.HyperMD-codeblock):not(:has(+ .cm-table-widget)) {
     /* This is a blank line which:
      *
      * 1)   Is not part of a code block;
-     * 2)   Is not preceding a table.
+     * 2)   is not preceding a table.
      *
      * Such empty lines shall be resized to 100% when the cursor is inside
      * of them. */
     font-size: 100%;
 }
+    /* Without further styling, there is a subtle scheme of use:
+     *
+     *  1.  Complete a headline.
+     *  2.  Place a blank line beneath by pressing Enter.
+     *  3.  The new blank line will be scaled to 100%, and will receive the
+     *      1em `padding-top` from the headlines section (completing the
+     *      headline stack).
+     *  4.  Press Enter once more.  Now, there are *two* blank lines.
+     *  5.  The first blank line has no longer the cursor, and reduces to
+     *      ``--font-size-blank-line``, while still maintaining its ``1em``
+     *      ``padding-top``.
+     *
+     * This results in a slight *upwards* motion of the cursor when
+     * pressing Enter for the second time.
+     *
+     * This problem is solved in the *headlines* section. */
 
-/* This is a special unavoidable blank line preceding tables: */
 div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
-    /* Such empty lines inherit the ``--font-size-blank-line``.  This is
-     * intentional; I like it when the cursor in *reduced in size* while in
-     * such a blank line preceding a table. */
+    /* This is a special unavoidable blank line preceding tables.  The
+     * previous rule to re-set the ``font-size`` to 100% when being
+     * ``.cm-active`` does not apply to these lines, so the
+     * ``--font-size-blank-line`` is applied to the line either *with* or
+     * *without* having the cursor.  This behaviour is intentional; I like
+     * it when the cursor is *reduced in size* while in such a blank line
+     * preceding a table. */
     height: 0 !important;
         /* Eliminate the vertical effect of the blank line. */
 }
