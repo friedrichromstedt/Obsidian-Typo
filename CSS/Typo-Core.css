@@ -94,6 +94,10 @@ div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
 body {
     --code-background: #f2f2f2;
     --code-size: 75%;
+    --code-1em: 1.33em;
+        /* Used to pad *code blocks* by 1em of continuous text.  This is
+         * precisely the *inverse* of --code-size.  As a test, --code-1em *
+         * --code-size should be 1.0em. */
 }
 
 /* Per preset, a vertical margin of ~1em is set.  I cannnot pinpoint the
@@ -146,6 +150,7 @@ div.HyperMD-header.cm-line + .cm-line { padding-top: 1.00em !important; }
      * by 1em from the headline.  This also matches headlines directly
      * following headlines, where it is overridden by the following rules.
      * */
+div.HyperMD-header.cm-line + .cm-line.HyperMD-codeblock { padding-top: var(--code-1em) !important; }
 .cm-line + div.HyperMD-header-1.HyperMD-header.cm-line { padding-top: 0.62em !important; }
 .cm-line + div.HyperMD-header-2.HyperMD-header.cm-line { padding-top: 0.68em !important; }
 .cm-line + div.HyperMD-header-3.HyperMD-header.cm-line { padding-top: 0.76em !important; }
