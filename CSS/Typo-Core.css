@@ -110,7 +110,7 @@ body {
 }
 
 /* In live mode, we need to override a rule from Obsidian selecting header
- * lines, declaring ``font-size: inherit !important``, which override the
+ * lines, declaring ``font-size: inherit !important``, which overrides the
  * non-``!important`` styles provided by Obsidian to implement
  * ``--code-size`` */
 .cm-editor .cm-content span.cm-header.cm-inline-code {
