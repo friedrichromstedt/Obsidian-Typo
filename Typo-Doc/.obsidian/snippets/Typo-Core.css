@@ -23,6 +23,8 @@ body {
          * depends also on the line height; this is intended behaviour. */
 
     --margin-blank-line: 0.513em;
+        /* The *margin* around blocks in *reading mode*, in substitution of
+         * adjacent blank lines. */
         /* var(--font-size-blank-line) * var(--line-height-normal) */
         /* Needs to be maintained manually. */
 }
@@ -61,65 +63,74 @@ div.HyperMD-list-line:not(:has(+ div.HyperMD-list-line)) {
 }
 
 /* In editing mode, paragraphs are separated by blank lines: */
-div.cm-line:has(> br:only-child) {
+div.cm-line:has(> br:only-child):not(.HyperMD-codeblock) {
     font-size: var(--font-size-blank-line);
 }
-div.cm-line.cm-active:has(> br:only-child) {
+div.cm-line.cm-active:has(> br:only-child):not(.HyperMD-codeblock):not(:has(+ .cm-table-widget)) {
+    /* This is a blank line which:
+     *
+     * 1)   Is not part of a code block;
+     * 2)   is not preceding a table.
+     *
+     * Such empty lines shall be resized to 100% when the cursor is inside
+     * of them. */
     font-size: 100%;
 }
-/* There is some subtle case where this will be overridden below: When a
- * blank line follows a headline, without further styling it is reduced to
- * 38% font-size, and it will receive the 1em padding-top from the
- * headline rules below.  On the other hand, when there is *no* such blank
- * line following the headline present, the next line of text will *also*
- * obtain the 1em padding-top.  Thus, the following behaviour results when
- * entering blank lines below a headline: 1. The cursor will offset to the
- * headline by 1em of standard height, as intended. 2. When hitting enter
- * once more, the resulting first blank line will transform as described to
- * 38% with 1em of padding-top (of this 38%), so the cursor will
- * effectively move *upwards* a little bit. */
+    /* Without further styling, there is a subtle scheme of use:
+     *
+     *  1.  Complete a headline.
+     *  2.  Place a blank line beneath by pressing Enter.
+     *  3.  The new blank line will be scaled to 100%, and will receive the
+     *      1em `padding-top` from the headlines section (completing the
+     *      headline stack).
+     *  4.  Press Enter once more.  Now, there are *two* blank lines.
+     *  5.  The first blank line has no longer the cursor, and reduces to
+     *      ``--font-size-blank-line``, while still maintaining its ``1em``
+     *      ``padding-top``.
+     *
+     * This results in a slight *upwards* motion of the cursor when
+     * pressing Enter for the second time.
+     *
+     * This problem is solved in the *headlines* section. */
 
-/* This is a special unavoidable blank line preceding tables: */
 div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
-    font-size: var(--font-size-blank-line);
-        /* Without this declaration, ``font-size: 100%`` from the
-         * ``.cm-active`` rule would be applied.  I like it better when the
-         * cursor is *reduced in size* while in the blank line selected
-         * here.  The value 100% would work as well. */
+    /* This is a special unavoidable blank line preceding tables.  The
+     * previous rule to re-set the ``font-size`` to 100% when being
+     * ``.cm-active`` does not apply to these lines, so the
+     * ``--font-size-blank-line`` is applied to the line either *with* or
+     * *without* having the cursor.  This behaviour is intentional; I like
+     * it when the cursor is *reduced in size* while in such a blank line
+     * preceding a table. */
     height: 0 !important;
+        /* Eliminate the vertical effect of the blank line. */
 }
 
-/* Background of code elements ... */
+/* Code elements ... */
 
-body { --code-background: #f2f2f2; }
-
-/* Reduced font size for code elements ... */
-
-/* Inline ``code`` elements: */
-.markdown-preview-view code {
-    font-size: 75%;
+body {
+    --code-background: #f2f2f2;
+    --code-size: 75%;
+    --code-1em: 1.33em;
+        /* Used to pad *code blocks* by 1em of continuous text.  This is
+         * precisely the *inverse* of --code-size.  As a test, --code-1em *
+         * --code-size should be 1.0em. */
 }
-/* ``code`` elements in listings are surrounded by ``pre`` elements: */
-.markdown-preview-view pre code {
-    font-size: 75%;
-}
-/* Removing an unneeded margin above/below ``pre`` elements: */
+
+/* Per preset, a vertical margin of ~1em is set.  I cannnot pinpoint the
+ * origin.  However, it is overridden here by the separation margin
+ * corresponding to blank lines.  N.B. that the ``pre`` element has the
+ * *same* font size as the continuous text; the reduction to
+ * ``--code-size`` happens in the contained ``code`` element. */
 .markdown-preview-view pre {
-    margin: 0;
+    margin: var(--margin-blank-line) 0;
 }
 
-/* In live mode, inline code sequences are ``span.cm-inline-code``
- * elements: */
-.cm-editor .cm-content span.cm-inline-code {
-    font-size: 75%;
-}
+/* In live mode, we need to override a rule from Obsidian selecting header
+ * lines, declaring ``font-size: inherit !important``, which overrides the
+ * non-``!important`` styles provided by Obsidian to implement
+ * ``--code-size`` */
 .cm-editor .cm-content span.cm-header.cm-inline-code {
-    font-size: 75% !important;
-}
-/* The live-mode equivalent to ``pre`` elements are
- * ``div.HyperMD-codeblock`` elements: */
-.cm-editor .cm-content div.HyperMD-codeblock {
-    font-size: 75%;
+    font-size: var(--code-size) !important;
 }
 
 /* Overflow of code blocks goes beyond Obsidian ... */
@@ -139,8 +150,8 @@ body { --code-background: #f2f2f2; }
      * Obsidian adds ``margin-top: var(--heading-spacing);``
      */
 
-/* Implementation of consistent whitespace around headlines in reading
- * mode: */
+/* Implementation of consistent whitespace around headlines in live mode:
+ * */
 div.inline-title { margin-bottom: 0.62em; }
     /* Choose a ``margin-bottom`` for the inline title similar to h1.  In
      * preview mode, this will collapse with possible margins at the top of
@@ -155,6 +166,7 @@ div.HyperMD-header.cm-line + .cm-line { padding-top: 1.00em !important; }
      * by 1em from the headline.  This also matches headlines directly
      * following headlines, where it is overridden by the following rules.
      * */
+div.HyperMD-header.cm-line + .cm-line.HyperMD-codeblock { padding-top: var(--code-1em) !important; }
 .cm-line + div.HyperMD-header-1.HyperMD-header.cm-line { padding-top: 0.62em !important; }
 .cm-line + div.HyperMD-header-2.HyperMD-header.cm-line { padding-top: 0.68em !important; }
 .cm-line + div.HyperMD-header-3.HyperMD-header.cm-line { padding-top: 0.76em !important; }
@@ -185,9 +197,9 @@ body {
     --h1-size: 1.618em;
     --h2-size: 1.462em;
     --h3-size: 1.318em;
-    --h4-size: 1.118em;
+    --h4-size: 1.188em;
     --h5-size: 1.076em;
-    --h6-size: 1em;
+    --h6-size: 1.000em;
 
     --h1-weight: 600;
     --h2-weight: 600;

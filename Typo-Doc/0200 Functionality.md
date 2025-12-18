@@ -21,21 +21,19 @@ print("Hello World!")
 is chosen considerably smaller than the continuous text surrounding code listings, to ensure proper visual quality of the results. The shade of grey used for the background colour of inline code is chosen carefully for white text background.
 # 3 Whitespace
 ## 3.1 Paragraphs
-In **editing mode**, white space surrounding paragraphs is provided by entering *empty lines*. The *font size* of these lines is reduced to 30%, to limit the visual impact. When the cursor is located directly in such an empty line, the line will be formatted in full size (100%). This results in a slight downward-shift of all elements below that line. The reduction in size of the empty line will be restored when the cursor leaves it.
+In *editing mode*, white space surrounding paragraphs is provided by entering *empty lines*. The *font size* of these lines is reduced, to limit the visual impact. When the cursor is located directly in such an empty line, the line will be formatted in full size. This results in a slight downward-shift of all elements below that line. The reduction in size of the empty line will be restored when the cursor leaves it.
 
-The blocks of text separated by blank lines form the paragraphs in **reading mode**. Here, the same spacing between such paragraphs is provided as it results from the empty lines in editing mode.
+The blocks of text separated by blank lines form the paragraphs in *reading mode*. Here, the same spacing between such paragraphs is provided as it results from the empty lines in editing mode.
 ## 3.2 Headlines
 Headlines are provided automatically above and below them with 1em of whitespace, measured in em of the continuous text. There is no need for manual blank lines. However, the *Obsidian-Typo* styles are robust against such blank lines:
 
 1. An empty line just *below* a headline will be rendered in such a way that the typographical 1em margin is maintained.
 2. Such an empty line can also be placed *in between* of two headlines without impact on the typographical result.
-3. Just *above* of a headline, additional blank lines will otherwise be reduced to 30% font-size, so their impact will be little.
-
-This behaviour is implemented not using obscure exeptions and conditions, but is a result of design. However, whitespace around headlines is the most intricate section of the codes in *Obsidian-Typo*.
+3. Just *above* of a headline, additional blank lines will otherwise be reduced in font-size, so their impact will be little.
 
 As a result, existing markdown headlines will format properly with *Obsidian-Typo* in most cases just from the beginning. Before having *Obsidian-Typo* at hand, I found it customary in many places to surround headlines by an empty line below, where I didn't see *any* whitespace before, and then also by a blank line *above*, to prevent the whitespace *above* from being smaller than the one *below*. Such tweaks are not required with *Obsidian-Typo*, but their existence in markdown texts won't disrupt the result when the text will be subjected to *Obsidian-Typo* rendering for the first time.
 ## 3.3 Tables
-In the current version of Obsidian (v1.10.6), tables are inevitably preceded by an empty line. *Obsidian-Typo* limits the effect of this blank line by reducing its height to zero. The *font size* is however set to 30% of the surrounding text. It is still possible to enter this empty line with the cursor; the cursor will be shown with 30% of its default size. This tweak should turn into a no-op automatically when the issue might be fixed upstream.
+In the current version of Obsidian (v1.10.6), tables are inevitably preceded by an empty line. *Obsidian-Typo* limits the effect of this blank line by reducing its height to zero. The *font size* is however reduced w.r.t. the surrounding text. It is still possible to enter this empty line with the cursor; the cursor will be shown in the reduced font-size. This tweak should turn into a no-op automatically when the issue might be fixed upstream.
 ## 3.4 Enumerations and Itemisations
 There is a certain typographic decision which needs to be taken for enumerations (ordered lists) and itemisations (unordered lists):
 
