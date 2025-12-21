@@ -5,21 +5,21 @@ After having downloaded the main Git repo of *Obsidian-Typo*, the repository con
 - The `other` folder holds material I used during developing *Obsidian-Typo*, either work by *other* people or content created with *other* people's tools.
 - In `Typo-Doc` this documentation is provided.
 
-The CSS snippets you'll want to install to your Obsidian vault are those provided by the `CSS` folder:
+The CSS snippets needed to be installed to your Obsidian vault are those provided by the `CSS` folder:
 
 - `Typo-Core.css` contains all the required styles to begin formatting with typographic pleasure.
 - `Typo-Checklists.css` provides *in addition* the checklist icons provided by @kepano part of his *Minimal* theme.
 # 3 Procedure of Installation
 The installation consists of two steps:
 
-1. Providing the CSS `.css` files from the `CSS` folder in *Obsidian-Typo's* repo to a folder where *Obsidian* expects user-supplied snippets to be provided. The method depends on the operating system, and is described for the macOS and for the iOS/iPadOS-version in detail *below*, together with some hints for Windows users and for the situation on Linux.
-2. In the *Appearance* setting of Obsidian, *enable* the snippet or the snippets just copied over. These settings are located at the bottom end of the *Appearance* pane.
+1. Copying the CSS `.css` files from the `CSS` folder in *Obsidian-Typo's* repo to a folder where *Obsidian* expects user-supplied snippets to be provided. The method depends on the operating system, and is described for the macOS and for the iOS/iPadOS-version in detail *below*, together with some hints for Windows users and for the situation on Linux.
+2. In the *Appearance* setting of Obsidian, the snippets just copied over need to be *enabled*. The corresponding settings are located at the bottom end of the *Appearance* pane.
 
 After installation, *Obsidian-Typo* will start carrying out its typographic work.
 
-If you ever decide to not using *Obsidian-Typo* any longer, you can either *disable* the corresponding CSS snippets in the *Appearance* pane or you can *remove* the distinct files directly.
+If ever deciding to not using *Obsidian-Typo* any longer, either the the corresponding CSS snippets can be *disabled* in the *Appearance* pane or the respective files can be directly *removed*.
 
-To *update* to another revision of *Obsidian-Typo*, just replace the existing files with the other variant. Obsidian will automatically reformat your documents.
+Changing to another revision of *Obsidian-Typo* is accomplished by just replacing the existing files by the other varaint. Obsidian will automatically reformat the documents.
 
 Notice that with ongoing work on *Obsidian-Typo*, it *might* happen that existing CSS snippets are renamed, split, united or removed. In this case, such changes needs to be carried out when maintaining the `.obsidian/snippets/` folder.
 ## 3.1 Copying over the Snippets in macOS

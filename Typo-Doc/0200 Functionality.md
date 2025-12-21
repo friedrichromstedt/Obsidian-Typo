@@ -18,7 +18,7 @@ The font size of `code spans` and of code blocks:
 ```python
 print("Hello World!")
 ```
-is chosen considerably smaller than the continuous text surrounding code listings, to ensure proper visual quality of the results. The shade of grey used for the background colour of inline code is chosen carefully for white text background.
+is chosen considerably smaller than the continuous text surrounding code listings, to ensure proper visual quality of the results. The shade of grey used for the background colour of code is chosen carefully for white text background.
 # 3 Whitespace
 ## 3.1 Paragraphs
 In *editing mode*, white space surrounding paragraphs is provided by entering *empty lines*. The *font size* of these lines is reduced, to limit the visual impact. When the cursor is located directly in such an empty line, the line will be formatted in full size. This results in a slight downward-shift of all elements below that line. The reduction in size of the empty line will be restored when the cursor leaves it.

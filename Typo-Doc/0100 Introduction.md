@@ -1,4 +1,4 @@
-Obsidian comes with default settings, laid out in the *default theme*. These provide a set of rules to format plain ASCII Markdown (`.md`) text files as HTML. Obsidian distinguishes between two modes of operation:
+Obsidian comes with default settings, laid out in the *default theme*. These provide a set of rules to format plain markdown (`.md`) text files as HTML. Obsidian distinguishes between two modes of operation:
 
 1. *Editing mode*, here the pure-text is already HTML-converted *while editing* it;
 2. *Reading mode*, where another set of styles and a different HTML hierarchy is used.
