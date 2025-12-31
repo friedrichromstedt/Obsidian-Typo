@@ -107,8 +107,14 @@ div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
 
 /* Code elements ... */
 
-body {
+body.theme-light {
     --code-background: #f2f2f2;
+}
+body.theme-dark {
+    --code-background: black;
+}
+
+body {
     --code-size: 75%;
     --code-1em: 1.33em;
         /* Used to pad *code blocks* by 1em of continuous text.  This is
