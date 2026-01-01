@@ -1,18 +1,5 @@
 /* Developed since: November 2025 */
 
-/* Overall choice of a serif font ... */
-
-/* In preview mode: */
-div.markdown-preview-view {
-    --font-text: serif;
-}
-
-/* In live mode: */
-div.cm-editor {
-    --font-text: serif;  /* For the default theme */
-    font-family: serif;  /* For kepano's Minimal theme */
-}
-
 /* Variables to control vertical whitespace ... */
 
 body {
@@ -106,13 +93,6 @@ div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
 }
 
 /* Code elements ... */
-
-body.theme-light {
-    --code-background: #f2f2f2;
-}
-body.theme-dark {
-    --code-background: black;
-}
 
 body {
     --code-size: 75%;
