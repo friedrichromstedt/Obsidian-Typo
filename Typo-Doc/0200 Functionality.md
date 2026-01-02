@@ -10,15 +10,17 @@
 
 All in all, *Obsidian-Typo* is designed to make it easy writing standard-conformant Markdown code, while still experiencing proper observation of typographical rules. The rendering is almost identical in editing and in reading mode.
 # 2 Rendering of Text
-*Obsidian-Typo* generally prefers *serif* fonts, both in editing mode as well as in reading mode. This applies to the editing body as well as to the inline title *above* the editing body. Other pieces of the UI are *not* affected.
+*Obsidian-Typo* can use *serif* fonts, both in editing mode as well as in reading mode. This applies to the editing body as well as to the inline title *above* the editing body. Other pieces of the UI are *not* affected.
 
 Continuous text is rendered in *non-justified* manner due to some technical limitations on the iPad.
 
 The font size of `code spans` and of code blocks:
+
 ```python
 print("Hello World!")
 ```
-is chosen considerably smaller than the continuous text surrounding code listings, to ensure proper visual quality of the results. The shade of grey used for the background colour of code is chosen carefully for white text background.
+
+is chosen considerably smaller than the continuous text surrounding code listings, to ensure proper visual quality of the results. The shade of grey used for the background colour of code is chosen carefully for white text background (light theme variant); for dark themes *Obsidian-Typo* just uses *black*.
 # 3 Whitespace
 ## 3.1 Paragraphs
 In *editing mode*, white space surrounding paragraphs is provided by entering *empty lines*. The *font size* of these lines is reduced, to limit the visual impact. When the cursor is located directly in such an empty line, the line will be formatted in full size. This results in a slight downward-shift of all elements below that line. The reduction in size of the empty line will be restored when the cursor leaves it.
@@ -45,6 +47,8 @@ Furthermore, according to the markdown specification, text directly following an
 To meet the markdown specs, a blank line is thus required just beneath the last list element. It is therefore a good idea to place blanks before and after lists already when editing the text. *Obsidian-Typo* does *not* render whitespace around a block of list items in editing mode automatically; instead; it relies on the user to type the required blank line.
 
 In reading mode, corresponding whitespace around the block of list items will be rendered automatically, yielding the same layout as resulting from a *blank line* in editing mode. *Between* list items *no* additional whitespace is produced in reading mode.
+## 3.5 Blocks of Mathematical Formulas
+Mathematical formula blocks are fully supported by *Obsidian-Typo*. The best result is obtained when math blocks are placed on dedicated markdown lines, without following or heading blank lines. In this case, vertical whitespace will be rendered equivalently in editing mode and in reading mode.
 # 4 Check List Icons
 *Obsidian-Typo* comes with a stylesheet which is a section of kepano's *Minimal* theme, defining various icon names which can be used in checklists.
 

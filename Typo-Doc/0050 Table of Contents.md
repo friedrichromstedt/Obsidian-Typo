@@ -1,4 +1,4 @@
 1. The [[0100 Introduction|Introduction]] provides basic information about how *Obsidian-Typo* relates to Obsidian and which limitations of the default theme and the *Minimal* theme gave rise to this work.
 2. Chap. [[0200 Functionality|Functionality]] describes the design principles of *Obsidian-Typo* and how it processes text and whitespace.
 3. Some Whys and Hows about the Installation of *Obsidian-Typo* are covered in the [[0300 Installation|Installation]] chapter.
-4. Chapter [[0400 Notes on the Implementation|Notes on the Implementation]] describes the design decision taken in developing *Obsidian-Typo*.
+4. The chapter [[0400 Notes on the Implementation|Notes on the Implementation]] describes the design decision taken in developing *Obsidian-Typo*.

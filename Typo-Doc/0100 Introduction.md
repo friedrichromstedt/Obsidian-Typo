@@ -7,7 +7,7 @@ The styling of both modes can be customised by user-supplied CSS, either in the 
 
 There are many templates available, however I was always left insatisfied with a few phenomena:
 
-1. In the edting mode, headlines feature whitespace only on the top side, and I also dislike formatting in reading mode (for instance in both the default as well as the Minimal theme).
+1. In editing mode, headlines feature whitespace only on the top side, and I also dislike formatting in reading mode (for instance in both the default as well as the Minimal theme).
 2. Whitespace by blank lines appeared too pronounced to me.
 3. I prefer writing texts in *serif* font, something which seems unpopular.
 4. The font size of headlines in the popular *Minimal* theme by @kepano are rather small, so I'd prefer the behaviour of the default theme in this matter.
