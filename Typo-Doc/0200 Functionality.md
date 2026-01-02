@@ -20,7 +20,7 @@ The font size of `code spans` and of code blocks:
 print("Hello World!")
 ```
 
-is chosen considerably smaller than the continuous text surrounding code listings, to ensure proper visual quality of the results. The shade of grey used for the background colour of code is chosen carefully for white text background (light theme variant); for dark themes *Obsidian-Typo* just uses *black*.
+is chosen considerably smaller than the continuous text surrounding code listings, to ensure proper visual quality of the results. When *Obsidian-Typo* is configured to set the background colour of code, it uses for light theme variants a shade of grey carefully selected for white text background; for dark themes *Obsidian-Typo* just uses *black*.
 # 3 Whitespace
 ## 3.1 Paragraphs
 In *editing mode*, white space surrounding paragraphs is provided by entering *empty lines*. The *font size* of these lines is reduced, to limit the visual impact. When the cursor is located directly in such an empty line, the line will be formatted in full size. This results in a slight downward-shift of all elements below that line. The reduction in size of the empty line will be restored when the cursor leaves it.
