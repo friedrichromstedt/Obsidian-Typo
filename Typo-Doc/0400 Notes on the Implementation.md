@@ -102,7 +102,7 @@ Reusing a blank line following a headline in this manner has advantages:
 2. Such a blank line can be used to improve rendering of code blocks directly following a headline. Without the blank, the upmost code block line is outfitted by a `padding-top` declaration separating the code block content from the headline by the figure which produces `1em` of continuous text. This amount of padding space however will extend the region of the code block's background, leading to an extension of the background-styled rectangle containing the code lines. By separating such a code block in the markdown code by an empty line from the headline above it, such an extension can be prevented from occuring, improving visual quality. In reading mode, the spacing is provided by *margin*, which isn't coloured by the background colour, and the empty line is of no harmful impact whatsoever.
 
 Using blank lines around code blocks is generally encouraged: The *margin* around code blocks in *reading mode* is styled in such a way, that they correspond to a single line of blank above and below of such a code block in *editing mode*. The blank lines of markdown are not required, but placing them in the markdown code in this way improves readability and brings the live mode closer to the preview mode.
-## 2.4 Mathematical Formulae
+## 2.4 Mathematical Formulas
 Mathematical formulas in Obsidian are rendered by *MathJax*. There are two types of formula rendering: *in-line* (for example `$ z = a + ib $`) and as a *display math block* (e.g. `$$ a^2 + b^2 = c^2 $$`).
 
 Inline maths are contained within a line of continuous text, and are of no concern for *Obsidian-Typo*.
@@ -125,12 +125,12 @@ When the document starts with display math, its vertical top padding introduces 
 
 When a math block is surrounded on both sides by continuous text, it will be separated vertically above and below appropriately by the `1em` padding imposed by the `mjx-container` element. Math blocks surrounded only on the *left* or only at the *right* by such text however are problematic:
 
-- The formula will be *embedded* in the `.cm-line` element corresponding to the line of markdown input. This `.cm-line` element can receive padding *completely independent* from the math block contained, s.t. such padding adds up with the padding declared for the `mjx-container`.
-- Obsidian injects additional spacer `img` elements, which introduce additional vertical whitespace where it is not approriate.
+- The formula will be *embedded* in the `.cm-line` element corresponding to the line of markdown input. This `.cm-line` element can receive padding *completely independent* from the math block contained; in this case the padding of the `.cm-line` adds up with the padding declared for the `mjx-container`.
+- Obsidian injects spacer `img` elements, which introduce additional vertical whitespace where it is not approriate.
 
 Blank lines above or below of display math do not harm, but they do not correspond with whitespace in *preview* mode, and will therefore be displayed only in *live mode*.
 
-It is thus recommended to *neither* separate math blocks from the surrounding by blank lines, *nor* to embed them in a markdown line including text before or following the display math content.
+It is thus recommended to *neither* separate math blocks from the surrounding by blank lines, *nor* to embed them in a markdown line including text before or following the display math content. They should be provided on a singular dedicated line, directly adjacent to the preceding and following markdown content.
 # 3 CSS Variables
 ## 3.1 Continuous Text
 To choose a serif font, the `--font-text` variable is set to `serif` for the `div.markdown-preview-view` (for the preview mode) as well as for the `div.cm-editor` (for the live mode). This suffices in the default theme. However, with kepano's *Minimal* theme, the setting is ineffective in live mode; here, I've added a declaration `font-family: serif` to the `div.cm-editor` rule.
@@ -187,7 +187,7 @@ Whitespace lines *above* a headline *do* introduce additional vertical separatio
 
 Additional padding between the title line and a display math formula used as the first element of the document is not eliminated by further styling, because this situation is considered as a rare corner-case of little practical relevance.
 
-The consistency of vertical spacing around display math blocks with styles introduced by *Obsidian-Typo* is grounded in the equal choice of vertical padding introduced by Obsidian around formulas and the vertical padding used by *Obsidian-Typo* to separate headlines from surrounding text.
+The consistency of vertical spacing around display math blocks with the styles introduced by *Obsidian-Typo* is grounded in the equal choice of vertical padding by *Obsidian-Typo* to separate headlines from the surrounding text and the vertical padding around formulas introduced by Obsidian.
 # 6 Testing *Obsidian-Typo*
 The test to be carried out the most easy and at the same time the most difficult test to pass is the transition between editing mode and reading mode: Here, the typography of the document should change as little as possible when using *Obsidian-Typo*. In the following, a handful of behavioural patterns are described, which can be observed when entering text while using *Typo*. The test to switch between editing mode and reading mode can be applied additionally in either of the situations.
 
