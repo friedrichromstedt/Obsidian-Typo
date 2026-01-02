@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "4fd6cbaaa463dc5c",
+        "id": "96d0c0866084ea8c",
         "type": "tabs",
         "children": [
           {
-            "id": "676fe1bf1c80d939",
+            "id": "8f38352944c5006d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "math",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "0200 Functionality.md",
+                "file": "0400 Notes on the Implementation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 0200 Functionality"
+              "title": "Backlinks for 0400 Notes on the Implementation"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "0200 Functionality.md",
+                "file": "0400 Notes on the Implementation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 0200 Functionality"
+              "title": "Outgoing links from 0400 Notes on the Implementation"
             }
           },
           {
@@ -156,12 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "0400 Notes on the Implementation.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of 0400 Notes on the Implementation"
             }
           }
         ],
@@ -169,8 +170,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 341.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -183,13 +183,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "676fe1bf1c80d939",
+  "active": "8f38352944c5006d",
   "lastOpenFiles": [
-    "0400 Notes on the Implementation.md",
-    "0200 Functionality.md",
-    "0300 Installation.md",
-    "0100 Introduction.md",
     "0050 Table of Contents.md",
+    "0400 Notes on the Implementation.md",
+    "0100 Introduction.md",
+    "0300 Installation.md",
+    "0200 Functionality.md",
+    "0250 Testing Obsidian-Typo.md",
     "x.html",
     "XXX.md",
     "Welcome.md"

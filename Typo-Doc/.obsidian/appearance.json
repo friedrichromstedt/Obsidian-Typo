@@ -1,11 +1,17 @@
 {
-  "cssTheme": "Minimal",
+  "cssTheme": "",
   "enabledCssSnippets": [
     "Typo",
     "Tables",
     "Checklists",
     "Typo-Checklists",
-    "Typo-Core"
+    "Typo-Core",
+    "Checklist-Typo",
+    "Code-Background-Typo",
+    "Core-Typo",
+    "Hyperlink-Typo",
+    "Serif-Typo"
   ],
-  "baseFontSize": 18
+  "baseFontSize": 18,
+  "accentColor": "#1c33e9"
 }
