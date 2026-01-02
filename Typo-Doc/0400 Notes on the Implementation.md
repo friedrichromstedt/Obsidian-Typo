@@ -116,21 +116,23 @@ Math blocks can be given in two ways in the markdown code:
 
 A block of display math is rendered always as a `div.math.math-block.cm-embed-block`, which contains a special `mjx-container` element. The `mjx-container` is styled by Obsidian with symmetric top and bottom padding of `1em`. In this way, the `mjx-container` element provides already the complete whitespace around the respective formula, and *Obsidian-Typo* styles should not introduce additional whitespace around display math.
 
+When a math block is surrounded on both sides by continuous text, it will be separated vertically above and below appropriately by the `1em` padding imposed by the `mjx-container` element. Math blocks surrounded by such text only on the *left* or only at the *right* however are problematic:
+
+- The formula will be *embedded* in the `.cm-line` element corresponding to the line of markdown input. This `.cm-line` element can receive padding *completely independent* from the math block contained; in this case the padding around the `.cm-line` adds up with the padding declared for the `mjx-container`.
+- Obsidian injects spacer `img` elements, which introduce additional vertical whitespace where it is not appropriate.
+
+Blank lines above or below of display math do not harm, but they do not correspond with whitespace in *preview* mode, and will therefore be displayed only in *live mode*.
+
+It is thus recommended to *neither* separate math blocks from the surrounding by blank lines, *nor* to embed them in a markdown line including text before or following the display math content. They should be provided on a singular dedicated line, directly adjacent to the preceding and following markdown content.
+
+When the document *starts* with display math, its vertical top padding introduces *additional* unintended whitespace, in effect doubling the distance to the title line of the document. Here, the objective to inhibit additional whitespace is not met.
+
 The `div.math.(...)` block is *not* of the class `.cm-line`. This means that:
 
 - Math blocks right above a heading will not be selected as a `.cm-line` preceding the headline. Such headlines are therefore styled *as if they were topmost* in the document, resulting in a `padding-top: 0`. Because here the formula provides an `1em` vertical padding, the resulting vertical whitespace is correct.
 - Math blocks directly following a headline aren't selected to provide the `1em` space below of such a headline. Here, the top-padding of the formula serves as the correct substitute.
 
-When the document starts with display math, its vertical top padding introduces *additional* unintended whitespace, in effect doubling the distance to the title line of the document. Here, the objective to inhibit additional whitespace is not met.
-
-When a math block is surrounded on both sides by continuous text, it will be separated vertically above and below appropriately by the `1em` padding imposed by the `mjx-container` element. Math blocks surrounded only on the *left* or only at the *right* by such text however are problematic:
-
-- The formula will be *embedded* in the `.cm-line` element corresponding to the line of markdown input. This `.cm-line` element can receive padding *completely independent* from the math block contained; in this case the padding of the `.cm-line` adds up with the padding declared for the `mjx-container`.
-- Obsidian injects spacer `img` elements, which introduce additional vertical whitespace where it is not approriate.
-
-Blank lines above or below of display math do not harm, but they do not correspond with whitespace in *preview* mode, and will therefore be displayed only in *live mode*.
-
-It is thus recommended to *neither* separate math blocks from the surrounding by blank lines, *nor* to embed them in a markdown line including text before or following the display math content. They should be provided on a singular dedicated line, directly adjacent to the preceding and following markdown content.
+In this way, there are no additional styles required in *Obsidian-Typo* related to mathematical content.
 # 3 CSS Variables
 ## 3.1 Continuous Text
 To choose a serif font, the `--font-text` variable is set to `serif` for the `div.markdown-preview-view` (for the preview mode) as well as for the `div.cm-editor` (for the live mode). This suffices in the default theme. However, with kepano's *Minimal* theme, the setting is ineffective in live mode; here, I've added a declaration `font-family: serif` to the `div.cm-editor` rule.
