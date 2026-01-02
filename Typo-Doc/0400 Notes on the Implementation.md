@@ -191,7 +191,7 @@ Additional padding between the title line and a display math formula used as the
 
 The consistency of vertical spacing around display math blocks with the styles introduced by *Obsidian-Typo* is grounded in the equal choice of vertical padding by *Obsidian-Typo* to separate headlines from the surrounding text and the vertical padding around formulas introduced by Obsidian.
 # 6 Testing *Obsidian-Typo*
-The test to be carried out the most easy and at the same time the most difficult test to pass is the transition between editing mode and reading mode: Here, the typography of the document should change as little as possible when using *Obsidian-Typo*. In the following, a handful of behavioural patterns are described, which can be observed when entering text while using *Typo*. The test to switch between editing mode and reading mode can be applied additionally in either of the situations.
+The test to be carried out the most easy and at the same time the most difficult test to pass is the transition between editing mode and reading mode: Here, the typography of the document should change as little as possible when using *Obsidian-Typo*. In the following, a handful of behavioural patterns are described, which can be observed when entering text while using *Obsidian-Typo*. The test to switch between editing mode and reading mode can be applied additionally in either of the situations.
 
 When separating a paragraph from the following content by an empty line, i.e. pressing *Enter* twice, the cursor remains always at the full size, while the separating blank line reduces in height after leaving it, s.t. the cursor moves *not a full line* downwards when Enter is pressed the second time.
 
@@ -203,8 +203,14 @@ The cursor moves to the position below a headline when completing the headline b
 
 When a code block directly follows a headline, the *grey background region* extends up to the headline. This problem can be remedied by placing a blank line in the markdown code between the headline and the code block. When typing this additional empty line, the *position of the code text* is not affected.
 
-Empty lines in code blocks are never reduced in text height.
+Empty lines in code blocks are never reduced in text height. When visiting such lines with the text cursor, their height is maintained.
 
-When obeying the rule to surround lists (enumerations as well as itemisations), paragraphs and code blocks atop and below by an *empty line*, the hereby introduced amount of whitespace corresponds precisely to the whitespace rendered in preview mode.
+Mathematical display block formulas are distanced to the surrounding text by whitespace identical to those present around headlines, given that such math blocks are provided on dedicated markdown lines without preceding or following text in the same line, and given further there are no blank lines above or below. Under this assumption, the adjacent markdown lines can contain any combination of continuous text and headlines.
+
+Blank lines around math blocks can result in excess vertical whitespace around the mathematical content.
+
+When the document starts directly with a mathematical formula block, the whitespace separating it from the title line is unintentionally doubled in size.
 
 The special blank line *above tables* can be visited by the cursor using the left/right cursor keys starting from the table or the preceding line of content. When entering this empty line, the text rendering is unaffected, and the cursor line is shown reduced in height. *Typing* here text of any kind to populate this empty line restores the font height to standard size along with the cursor, and the line behaves as a regular content line. In turn a new empty line just above the table will be introduced.
+
+When obeying the rule to surround lists (enumerations as well as itemisations), paragraphs and code blocks atop and below by an *empty line* from adjcent continuous text, the hereby introduced amount of whitespace corresponds precisely to the whitespace rendered in preview mode.
