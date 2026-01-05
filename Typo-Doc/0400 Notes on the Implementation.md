@@ -1,7 +1,7 @@
 # 1 Editing and Reading Mode
 *Editing mode* is meant to provide the user with a cursor to edit the markdown text, while at the same time properties resulting from markdown features are reflected instantaneously. The editing mode is called also the *live* mode.
 
-HTML Elements used to group together logical units of text, like ordered or unordered lists, are *not at all* used in editing mode, which is almost entirely *line-based*. Empty lines, as dedicated HTML elements, do exist *only* in editing mode, and are substituted in reading mode by whitespace associated to HTML elements surrounding blocks of text.
+HTML elements used to group together logical units of text, like ordered or unordered lists, are *not at all* used in editing mode, which is almost entirely *line-based*. Empty lines, as dedicated HTML elements, do exist *only* in editing mode, and are substituted in reading mode by whitespace associated to HTML elements surrounding blocks of text.
 
 Normally, whitespace is preferrably accomplished by setting *margins*. Vertical margin (`margin-top` and `margin-bottom`) comes with the feature of *collapsing*: When two elements vertically next to each other define both *margin* between them, whitespace corresponding to the *maximum* of the two figures will be rendered. This is an almost inevitable tool for styling HTML pages.
 
@@ -93,7 +93,7 @@ Regarding (2.), empty lines directly below a headline are not made to serve the 
 
 - Their `font-size` is set to `100%`;
 - their `line-height` is specified as `1.0`, to prevent additional vertical whitespace;
-- the `padding-top` applied to the *next line* is overridden to 0.
+- the `padding-top` applied to the *next line* is overridden to `0`.
 
 In this way, the vertical space introduced by the blank line is fully equivalent to `1em` of padding.
 
@@ -124,7 +124,7 @@ When a math block is surrounded on both the left and right sides by continuous t
 
 Blank lines above or below of display math do not harm, but they do not correspond with whitespace in *preview* mode, and will therefore be displayed only in *live mode*.
 
-It is thus recommended to *neither* separate math blocks from the surrounding by blank lines, *nor* to embed them in a markdown line including text before or following the display math content. They should be provided on a singular dedicated line, directly adjacent to the preceding and following markdown content.
+It is thus recommended to *neither* separate math blocks from the surroundings by blank lines, *nor* to embed them in a markdown line including text before or following the display math content. They should be provided on a singular dedicated line, directly adjacent to the preceding and following markdown content.
 
 When the document *starts* with display math, its vertical top padding introduces *additional* unintended whitespace, in effect doubling the distance to the title line of the document. Here, the objective to inhibit additional whitespace is not met.
 
@@ -142,7 +142,7 @@ The `--line-height-normal` of the `body` element has been crafted carefully to p
 ## 3.2 Code
 The shade of grey used is implemented by setting the `--code-background` variable.
 
-Size of code segment texts, both inline as well as in code blocks, is set by `--code-size`. Inline code sequences in header lines appear as a corner case: These spans are `span.cm-header.cm-inline-code` elements. Here, Obsidian imposes a `font-size: inherit !important` declaration, overriding the non-`!important` styles to implement `--code-size`; this is overridden once more by a `font-size: var(--code-size) !important` declaration in *Typo*.
+Size of code segment texts, both inline as well as in code blocks, is set by `--code-size`. Inline code sequences in header lines appear as a corner case: These spans are `span.cm-header.cm-inline-code` elements. Here, Obsidian imposes a `font-size: inherit !important` declaration, overriding the non-`!important` styles to implement `--code-size`; this is overridden once more by a `font-size: var(--code-size) !important` declaration in *Obsidian-Typo*.
 ## 3.3 Blank Lines and Corresponding Margin
 *Obsidian-Typo* introduces variables `--font-size-blank-line` and `--margin-blank-line`. Here, the `--font-size-blank-line` is set to a percentage, applied to the `font-size` of blank lines. The measure is designed to provide clear separation of the two lines neighbouring to it, while avoiding the unnecessary spacious separation of a *blank line* in full size. The figure has been determined down to a percent of change. The equivalent of the editing-mode `--font-size-blank-line` is the reading-mode `--margin-blank-line`. Both shall introduce whitespace of the same amount: `--font-size-blank-line` by being applied to an *entire line*, while `--margin-blank-line` being used as the `margin` property of one of the elements corresponding to the contents preceding/following the empty line. Here, a manual calculation is required to ensure identical rendering of *blank lines* and corresponding *margin*. The height of the empty line is defined by the font size it inherits, reduced by the `--font-size-blank-line` to a certain fraction, while the blank line *also* inherits the `--line-height-normal`, leading to an additional factor when calculating its entire height in `em` of the continuous text. Calling the `--font-size-blank-line` $f$, the `--line-height-normal` $l$, and the resulting *space* $s$, it holds that:$$ s = f \cdot l \cdot \mathrm{1em} $$Thus, the mantissa of the `--margin-blank-line` variable's value, before the unit `em`, is $f \cdot l$.
 

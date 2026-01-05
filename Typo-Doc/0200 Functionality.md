@@ -2,7 +2,7 @@
 *Obsidian-Typo* follows a few design principles:
 
 1. Typographical whitespace shall be inserted *around headlines* automatically.
-2. Whitespace around lists (enumerations and itemsations) should be *encouraged*. As an incentive to adding them, *Obsidian-Typo* renders them in reduced height, and exactly the same amount of white space will be displayed when in reading mode.
+2. Whitespace around lists (enumerations and itemisations) should be *encouraged*. As an incentive to adding them, *Obsidian-Typo* renders them in reduced height, and exactly the same amount of white space will be displayed when in reading mode.
 3. Whitespace between paragraphs (blocks of text) shall be provided by empty lines, it shall look similar to the whitespace around lists, and it shall be rendered identically both in editing and reading mode (unless multiple blanks are used).
 4. The styles shall work also on mobile devices. I am using *Obsidian-Typo* on the iPad and on the desktop (Linux and Windows) to verify functionality.
 5. *Obsidian-Typo* shall work with any theme, and shall *only* implement *typesetting*, leaving overall formatting to the theme the user likes best.
@@ -35,7 +35,7 @@ Headlines are provided automatically above and below them with 1em of whitespace
 
 As a result, existing markdown headlines will format properly with *Obsidian-Typo* in most cases just from the beginning. Before having *Obsidian-Typo* at hand, I found it customary in many places to surround headlines by an empty line below, where I didn't see *any* whitespace before, and then also by a blank line *above*, to prevent the whitespace *above* from being smaller than the one *below*. Such tweaks are not required with *Obsidian-Typo*, but their existence in markdown texts won't disrupt the result when the text will be subjected to *Obsidian-Typo* rendering for the first time.
 ## 3.3 Tables
-In the current version of Obsidian (v1.10.6), tables are inevitably preceded by an empty line. *Obsidian-Typo* limits the effect of this blank line by reducing its height to zero. The *font size* is however reduced w.r.t. the surrounding text. It is still possible to enter this empty line with the cursor; the cursor will be shown in the reduced font-size. This tweak should turn into a no-op automatically when the issue might be fixed upstream.
+In the current version of Obsidian (v1.10.6), tables are inevitably preceded by an empty line. *Obsidian-Typo* limits the effect of this blank line by reducing its height to zero. The *font size* is however only *reduced* w.r.t. the surrounding text. It is still possible to enter this empty line with the cursor; the cursor will be shown in the reduced font-size. This tweak should turn into a no-op automatically when the issue might be fixed upstream.
 ## 3.4 Enumerations and Itemisations
 There is a certain typographic decision which needs to be taken for enumerations (ordered lists) and itemisations (unordered lists):
 
