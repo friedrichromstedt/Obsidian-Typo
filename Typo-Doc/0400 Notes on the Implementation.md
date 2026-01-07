@@ -1,7 +1,7 @@
 # 1 Editing and Reading Mode
-*Editing mode* is meant to provide the user with a cursor to edit the markdown text, while at the same time properties resulting from markdown features are reflected instantaneously. The editing mode is called also the *live* mode.
+The *editing mode* is meant to provide the user with a cursor to edit the markdown text, while at the same time properties resulting from markdown features are reflected instantaneously. The editing mode is called also the *live* mode.
 
-HTML elements used to group together logical units of text, like ordered or unordered lists, are *not at all* used in editing mode, which is almost entirely *line-based*. Empty lines, as dedicated HTML elements, do exist *only* in editing mode, and are substituted in reading mode by whitespace associated to HTML elements surrounding blocks of text.
+HTML elements used to group together logical units of text, like ordered or unordered lists, are *not at all* used in editing mode, which is almost entirely *line-based*. Empty lines, as dedicated HTML elements, do exist *only* in editing mode, and are substituted in reading mode by whitespace associated to HTML elements containing blocks of text.
 
 Normally, whitespace is preferrably accomplished by setting *margins*. Vertical margin (`margin-top` and `margin-bottom`) comes with the feature of *collapsing*: When two elements vertically next to each other define both *margin* between them, whitespace corresponding to the *maximum* of the two figures will be rendered. This is an almost inevitable tool for styling HTML pages.
 
@@ -17,7 +17,7 @@ Inline *code spans* are defined as `span.cm-inline-code`.
 
 The entire *live mode* document is selected as `div.cm-editor`, the *preview* mode document as `div.markdown-preview-view`.
 
-The HTML elemente tree in *reading mode* is almost independent from the *editing mode* hierarchy. The editing mode also carries the name "*preview* mode", as it shows the HTML rendering using e.g. lists and paragraphs. In reading mode, whitespace between blocks of text is implemented utilising `margin` styles. Blank lines are not rendered *as such* in reading mode.
+The HTML element tree in *reading mode* is almost independent from the *editing mode* hierarchy. The editing mode also carries the name "*preview* mode", as it shows the HTML rendering using e.g. lists and paragraphs. In reading mode, whitespace between blocks of text is implemented utilising `margin` styles. Blank lines are not rendered *as such* in reading mode.
 # 2 Whitespace
 Lines of the following types occuring in live mode are addressed here:
 
@@ -29,14 +29,14 @@ Lines of the following types occuring in live mode are addressed here:
 
 Vertical whitespace can be rendered between any two elements in direct succession, each drawn from this set of types. The CSS codes shall work for *any* possible type of combination. There are also (rare) cases where *three* consecutive elements are used to define styles.
 
-The spacing around the `h1` ... `h6` elements in `em` of the continuous text can be calculated by multiplying the respective *headline size* in `em` by the *margin size* in `em`. I did an investigation of the margins used by the Firefox browser by writing a simple `.rst` file with six levels of headlines and applying Docutil's `rst2html` to it. The typography of the headlines is defined here solely by the browser stylesheet. The result was two-fold:
+The spacing around the `h1` ... `h6` elements in `em` of the continuous text can be calculated by multiplying the respective *headline size* in `em` by the *margin size* in `em` (in ordinary HTML rendering, no *padding* around headlines is used). I did an investigation of the whitespace figures used by the Firefox browser by writing a simple `.rst` file with six levels of headlines and applying Docutil's `rst2html` to it. The typography of the headlines is defined here solely by the browser stylesheet. The result was two-fold:
 
-1. Larger headlines use a smaller `em` figure for their surrounding margin. Here, the spacings measured in `em` of the surrounding text results were close to each other (although not identical).
+1. Larger headlines use a smaller `em` figure for their margins. Here, the spacings measured in `em` of the surrounding text results were close to each other (although not identical).
 2. The margin is identical above and below each headline.
 
-Because of this findings, I decided to place whitespace around headlines which is quivalent to `1em` in continuous text, independent of the headline level. This approach is essential for the practicability of the whole undertaking: Between two headlines, *each* of them can install the `1em` padding, and above/below a block of consecutive headlines, even the lines *above* or *below* can provide `1em` of padding. With an effective spacing *dependent on the headline level*, this freedom of choice would not exist.
+Because of this findings, I decided to place whitespace around headlines which is quivalent to `1em` in continuous text, independent of the headline level. This approach is essential for the practicability of the whole undertaking in editing mode, where *padding* is used: Between two headlines, *each* of them can install the `1em` padding, and above/below a block of consecutive headlines, even the lines *above* or *below* can provide `1em` of padding. With an effective spacing *dependent on the headline level*, this freedom of choice would not exist.
 
-In preview mode, the empty lines in the markdown code are taken into account to determine the boundaries of paragraphs (`p` elements), code blocks (`pre` elements) as well as of itemisations and enumerations (`ul` and `ol` elements). Not all empty lines correspond by necessity to such a boundary: It is e.g. possible in markdown to separate items of lists by vertical white space, without any effect of this blanks on the HTML rendering in preview mode. However, when using blank lines with caution, limiting their use to places where they correspond to boundaries, it is possible to establish equivalences of blanks and boundaries. The *margins* defined for `p`, `pre`, `ul` and `ol` elements in preview mode are designed in such a way, that they introduce *exactly* the same amount of vertical white space as the empty lines in live mode they correspond to.
+In preview mode, the empty lines in the markdown code are taken into account only as long as they determine boundaries of paragraphs (`p` elements) and itemisations and enumerations (`ul` and `ol` elements). Not all empty lines correspond by necessity to such a boundary: It is e.g. possible in markdown to separate items of lists by vertical white space, without any effect of this blanks on the HTML rendering in preview mode. However, when using blank lines with caution, limiting their use to places where they correspond to boundaries, it is possible to establish equivalences of blanks and boundaries. The *margins* defined for `p`, `pre`, `ul` and `ol` elements in preview mode are designed in such a way, that they introduce *exactly* the same amount of vertical white space as the empty lines in live mode they correspond to.
 ## 2.1 The Title Line of the Document
 The title line wording, contained in a `div.inline-title`, is defined by the document's .md filename on-disk, by removing the `.md` file extension from the file name. In reading mode, the body of the document starts by the `div.inline-title`, followed by the markdown code content of the file translated to HTML, while in live mode, the `.inline-title` resides in an independent container.
 
@@ -44,9 +44,9 @@ The `.inline-title` is provided with vertical whitespace *below*, equivalent to 
 
 In live mode, the first `.cm-line` of the *document body* must not define further top padding, to not introduce additional space between the title and the body.
 ## 2.2 Headlines
-For *any* `div.HyperMD-header.cm-line` the `padding-top` is zeroed out as the first specification. Because all other rules declaring a `padding-top` require a preceding `.cm-line` of *some* sort, this zero padding will be applied as a default value to a headline, when it is placed *directly* at the top end of the body. Otherwise, when the headline is *not* the first line, other rules will override this value of zero.
+For *any* `div.HyperMD-header.cm-line` the `padding-top` is zeroed out as the first specification. This zero padding will be applied as a default value for a headline, when it is placed directly at the top end of the body. Other rules declaring a non-zero `padding-top` require a preceding `.cm-line` of *some* sort. When the headline is *not* the first line, these other rules will override the value of zero.
 
-When a headline element carries a font size setting of `<A>em`, with a decimal number `<A>`, the figure `<1/A>em` corresponds to `1em` of the continuous text, as both figures `<A>` and `<1/A>` accumulate by multiplication. Thus, given a headline sizes of `<A>em`, declaring a padding of `<1/A>em` will provide the headline with a padding of `1em` measured in `em` of the surrounding text. This `<1/A>em` figure is applied as `padding-top`.
+When a headline element carries a font size setting of `<A>em`, with a decimal number `<A>`, the figure `<1/A>em` corresponds to `1em` of the continuous text, as both figures `<A>` and `<1/A>` accumulate by multiplication. Thus, given a headline size of `<A>em`, declaring a padding of `<1/A>em` will provide the headline with a padding of `1em` measured in `em` of the surrounding text. This `<1/A>em` figure is applied as `padding-top`.
 
 The `padding-top` will be re-set to zero, when the headline is located below a stack of two elements:
 
@@ -82,7 +82,9 @@ div.cm-line:has(> br:only-child)
 
 An initial rule selecting such empty lines provides them with a `font-size` reduced to a carefully crafted relative fraction, unless they are part of a code block, as blank lines in code blocks shall be shown verbatim.
 
-When placing the cursor in an empty line, the size reduction of the empty line involved is revoked. Otherwise the user experience would be impeded: Placing the cursor in an empty line would lead to a reduced cursor size, until the user starts typing (by which the line would no longer be *empty*). There are two special empty lines carrying a reduced size:
+When placing the cursor in an empty line, the size reduction of the empty line involved is revoked. Otherwise the user experience would be impeded: Placing the cursor in an empty line would lead to a reduced cursor size, until the user starts typing (by which the line would no longer be *empty*).
+
+There are two special kinds of empty lines, for which this size reduction behaviour is overridden:
 
 1. Empty lines directly preceding tables;
 2. Blanks just below headlines.
@@ -124,7 +126,7 @@ When a math block is surrounded on both the left and right sides by continuous t
 
 Blank lines above or below of display math do not harm, but they do not correspond with whitespace in *preview* mode, and will therefore be displayed only in *live mode*.
 
-It is thus recommended to *neither* separate math blocks from the surroundings by blank lines, *nor* to embed them in a markdown line including text before or following the display math content. They should be provided on a singular dedicated line, directly adjacent to the preceding and following markdown content.
+It is thus recommended to *neither* separate math blocks from the surroundings by blank lines, *nor* to embed them in a markdown line including text before or following the display math content. They should be provided on singular dedicated lines, directly adjacent to the preceding and following markdown content.
 
 When the document *starts* with display math, its vertical top padding introduces *additional* unintended whitespace, in effect doubling the distance to the title line of the document. Here, the objective to inhibit additional whitespace is not met.
 
@@ -192,11 +194,13 @@ Additional padding between the title line and a display math formula used as the
 
 The consistency of vertical spacing around display math blocks with the styles introduced by *Obsidian-Typo* is grounded in the equal choice of vertical padding by *Obsidian-Typo* to separate headlines from the surrounding text and the vertical padding around formulas introduced by Obsidian.
 # 6 Testing *Obsidian-Typo*
-The test to be carried out the most easy and at the same time the most difficult test to pass is the transition between editing mode and reading mode: Here, the typography of the document should change as little as possible when using *Obsidian-Typo*. In the following, a handful of behavioural patterns are described, which can be observed when entering text while using *Obsidian-Typo*. The test to switch between editing mode and reading mode can be applied additionally in either of the situations.
+The test to be carried out the most easy and at the same time the most difficult test to pass is the transition between editing mode and reading mode: Here, the typography of the document should change as little as possible when using *Obsidian-Typo*.
+
+In the following, a handful of behavioural patterns are described, which can be observed when entering text while using *Obsidian-Typo*. The test to switch between editing mode and reading mode can be applied additionally in either of the situations.
 
 When separating a paragraph from the following content by an empty line, i.e. pressing *Enter* twice, the cursor remains always at the full size, while the separating blank line reduces in height after leaving it, s.t. the cursor moves *not a full line* downwards when Enter is pressed the second time.
 
-Revisiting such empty lines with the cursor temporarily restores their height to the size of a line carrying content. This shifts the following content momentarily a little downwards.
+Revisiting such empty lines with the cursor temporarily restores their height to the size of a line carrying content. This shifts the following content momentarily slightly downwards.
 
 Introducing headlines is possible without intervening blank lines. When entering the leading *hash marks*, whitespace above as well as below is introduced instantaneously. Blank lines above a headline are styled identically to those between e.g. paragraphs.
 

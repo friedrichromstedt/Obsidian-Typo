@@ -16,7 +16,7 @@ The CSS snippets needed to be installed to your Obsidian vault are those provide
 The installation consists of two steps:
 
 1. Copying the CSS `.css` files from the `CSS` folder in *Obsidian-Typo's* repo to a folder where *Obsidian* expects user-supplied snippets to be provided. The method depends on the operating system, and is described for the macOS and for the iOS/iPadOS-version in detail *below*, together with some hints for Windows users and for the situation on Linux.
-2. In the *Appearance* setting of Obsidian, the snippets just copied over need to be *enabled*. The corresponding settings are located at the bottom end of the *Appearance* pane.
+2. In the *Appearance* settings tab of Obsidian, the snippets just copied over need to be *enabled*. The corresponding settings are located at the bottom end of the *Appearance* pane.
 
 After installation, *Obsidian-Typo* will start carrying out its typographic work.
 

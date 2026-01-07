@@ -14,6 +14,6 @@ There are many templates available, however I was always left insatisfied with a
 
 The result of dealing with these issues is the *Obsidian-Typo package*. *Obsidian-Typo* is a set of stylesheets to achieve an improved typographical experience already in editing mode. Rendering in both modes (reading mode and editing mode) is virtually identical.
 
-*Obsidian-Typo* is *not* a full theme; in view of the many commits and years @kepano needed to write the popular *Minimal* theme, *Obsidian-Typo* definitely should always build on-top of elaborate present solutions. Furthermore, *Obsidian-Typo* affects *only* the `.md` document rendering; it does not modify the exterior interface.
+*Obsidian-Typo* is *not* a full theme; in view of the many commits and years e.g. @kepano needed to write the popular *Minimal* theme, *Obsidian-Typo* definitely should always build on-top of elaborate present solutions. Furthermore, *Obsidian-Typo* affects *only* the `.md` document rendering; it does not modify the exterior interface.
 
 The styles provided here are understood as *drop-ins* for existing themes. *Obsidian-Typo* tries hard to overcome the abovementioned limitations, using well-designed style sheets, s.t. that the typographic rules addressed by it are implemented with precision.
