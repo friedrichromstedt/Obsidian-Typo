@@ -44,9 +44,9 @@ There is a certain typographic decision which needs to be taken for enumerations
 
 Furthermore, according to the markdown specification, text directly following an item of the list in the next line belongs to that previous line. This behaviour is useful when list items shall be continued on a new line of the markdown input without further ado. However, Obsidian cannot render this inclusion while in editing mode; it will be performed only when in reading mode.
 
-To meet the markdown specs, a blank line is thus required just beneath the last list element. It is therefore a good idea to place blanks before and after lists already when editing the text. *Obsidian-Typo* does *not* render whitespace around a block of list items in editing mode automatically; instead; it relies on the user to type the required blank line.
+To meet the markdown specs, a blank line is thus required just beneath the last list element. It is therefore a good idea to place blanks before and after lists already when editing the text. *Obsidian-Typo* does *not* render whitespace around a block of list items in editing mode automatically; instead; it relies on the user to type the required blank lines.
 
-In reading mode, corresponding whitespace around the block of list items will be rendered automatically, yielding the same layout as resulting from a *blank line* in editing mode. Obsidian declares an additional, very small small amount of whitespace rendered atop and below each individual list item; this whitespace remains unaltered by *Obsidian-Typo*.
+In reading mode, corresponding whitespace around the block of list items will be rendered automatically, yielding the same layout as resulting from *blank lines* in editing mode. Obsidian declares an additional, very small small amount of whitespace rendered atop and below each individual list item; this whitespace remains unaltered by *Obsidian-Typo*.
 ## 3.5 Blocks of Mathematical Formulas
 Mathematical formula blocks are fully supported by *Obsidian-Typo*. The best result is obtained when math blocks are placed on dedicated markdown lines, without following or heading blank lines. In this case, vertical whitespace will be rendered equivalently in editing mode and in reading mode.
 # 4 Check List Icons
