@@ -24,7 +24,7 @@ If ever deciding to not using *Obsidian-Typo* any longer, either the the corresp
 
 Changing to another revision of *Obsidian-Typo* is accomplished by just replacing the existing files by the other varaint. Obsidian will automatically reformat the documents.
 
-Notice that with ongoing work on *Obsidian-Typo*, it *might* happen that existing CSS snippets are renamed, split, united or removed. In this case, such changes needs to be carried out when maintaining the `.obsidian/snippets/` folder.
+Notice that with ongoing work on *Obsidian-Typo*, it *might* happen that existing CSS snippets are renamed, split, united or removed. In this case, such changes need to be carried out when maintaining the `.obsidian/snippets/` folder.
 ## 3.1 Copying over the Snippets in macOS
 There are at least two different options to copy over the snippets on macOS:
 
