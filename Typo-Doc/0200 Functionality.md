@@ -5,7 +5,7 @@
 2. Blank lines around lists (enumerations and itemisations) should be *encouraged*. As an incentive to adding them, *Obsidian-Typo* renders them in reduced height, and exactly the same amount of white space will be displayed when in reading mode.
 3. Whitespace between paragraphs (blocks of text) shall be provided by empty lines, it shall look similar to the whitespace around lists, and it shall be rendered identically both in editing and reading mode (unless multiple blanks are used).
 4. The styles shall work also on mobile devices. I am using *Obsidian-Typo* on the iPad and on the desktop (Linux, macOS and Windows) to verify functionality.
-5. *Obsidian-Typo* shall work with any theme, and shall *only* implement *typesetting*, leaving overall formatting to the theme the user likes best.
+5. *Obsidian-Typo* shall work with any theme, and shall *only* implement *typesetting*, leaving overall styling to the theme the user likes best.
 6. Moving to using *Obsidian-Typo* shall maintain readability of existing text, s.t. the introduction of *Obsidian-Typo* to an Obsidian vault won't require *any transformation* applied to the vault's contents.
 
 *Obsidian-Typo* is designed to make it easy writing standard-conformant Markdown code, with the experience of proper observation of typographical rules. The rendering is almost identical in editing and in reading mode.

@@ -44,26 +44,27 @@ The `.inline-title` is provided with vertical whitespace *below*, equivalent to 
 
 In live mode, the first `.cm-line` of the *document body* must not define further top padding, to not introduce additional space between the title and the body.
 ## 2.2 Headlines
+When a headline element carries a font size setting of `<A>em`, with a decimal number `<A>`, the figure `<1/A>em` corresponds to `1em` of the continuous text, as both figures `<A>` and `<1/A>` accumulate by multiplication. Thus, given a headline size of `<A>em`, declaring a padding of `<1/A>em` will provide the headline with a padding of `1em` measured in `em` of the surrounding text. This `<1/A>em` figure will be applied as `padding-top`.
+
 For *any* `div.HyperMD-header.cm-line` the `padding-top` is zeroed out as the first specification. This zero padding will be applied as a default value for a headline, when it is placed directly at the top end of the body. Other rules declaring a non-zero `padding-top` require a preceding `.cm-line` of *some* sort. When the headline is *not* the first line, these other rules will override the value of zero.
 
-When a headline element carries a font size setting of `<A>em`, with a decimal number `<A>`, the figure `<1/A>em` corresponds to `1em` of the continuous text, as both figures `<A>` and `<1/A>` accumulate by multiplication. Thus, given a headline size of `<A>em`, declaring a padding of `<1/A>em` will provide the headline with a padding of `1em` measured in `em` of the surrounding text. This `<1/A>em` figure is applied as `padding-top`.
+Headlines do not provide the padding between a headline and following non-headline elements. For this sake, any `div.cm-line` directly following a `div.HyperMD-header.cm-line` is styled by rules in the following order:
+
+1. Any such `.cm-line` receives a `padding-top` of `1em`. This remains active, unless it is overridden by the following, specialised rules. In this way, this rule is decisive for any continuous, non-special text.
+2. When the next `.cm-line` is of the `.HyperMD-codeblock` class, a *slightly different* measure is applied as `padding-top`, because `.HyperMD-codeblocks` are rendered with a reduced `font-size`.
+3. When the `.cm-line` is *empty* and does *not* carry the cursor, it will be styled to provide the whitespace between the headline and the following content. The empty line won't be selected for this rule when the cursor is located inside of it; in this case, it will be styled identically to the case where it is non-empty.
+
+A `div.HyperMD-header` element adjacent to a `div.HyperMD-header` is selected as a "`div.cm-line` following a `div.HyperMD-header.cm-line`" as well. This, in the first place, establishes by rule (1.) a `padding-top: 1em`. For a `div.HyperMD-header-<N>` element following *any* `.cm-line`, this is overridden by the correct, smaller figure, which depend on the *level* of the headline. These rules declare a suitable `padding-top` for any headline following *anything*.
 
 The `padding-top` will be re-set to zero, when the headline is located below a stack of two elements:
 
 1. A headline;
 2. an empty line not carrying the cursor.
 
-This set of styles for `padding-top` ensures that in a stack of directly adjacent headlines it holds that:
+This approach ensures that in a stack of directly adjacent headlines it holds that:
 
 1. The first headline is separated from the content preceding it by `1em` of continuous text, unless the headline is the first `.cm-line` in the whole document, and unless it is separated from another headline by a blank line;
 2. between successive headlines, the `1em` padding is installed.
-
-However, the headlines do not provide the padding between a headline and following non-headline elements. For this sake, any `div.cm-line` directly following a `div.HyperMD-header.cm-line` is styled by rules in the following order:
-
-1. Any such `.cm-line` receives a `padding-top` of `1em`. This remains active, unless it is overridden by the following, specialised rules. In this way, this rule is decisive for any continuous, non-special text.
-2. When the next `.cm-line` is of the `.HyperMD-codeblock` class, a *slightly different* measure is applied as `padding-top`, because `.HyperMD-codeblocks` are rendered with a reduced `font-size`.
-3. A `div.HyperMD-header` element adjacent to a `div.HyperMD-header` is selected as a "`div.cm-line` following a `div.HyperMD-header.cm-line`" as well. This, in the first place, establishes by rule (1.) a `padding-top: 1em`. *Here*, this is overridden by the correct, smaller figures, which depend on the *level* of the headline. These rules actually select `div.HyperMD-header-<N>` elements when they follow *any* `.cm-line`, and are therefore slightly more general: They also declare a suitable `padding-top` for a headline following *anything*.
-4. When the `.cm-line` is *empty* and does *not* carry the cursor, it will be styled to provide the padding between the headline and the following content. The empty line won't be selected for this rule when the cursor is located inside of it; in this case, it will be styled identically to the case where it is non-empty.
 
 In preview mode, where *margins* can be used to style vertical whitespace, and where no elements corresponding to empty lines exist, the situation is considerably more simple. For headlines, it is sufficient to install vertical `margin` using the figures equivalent to `1em` of continuous text.
 
@@ -115,13 +116,13 @@ Rendering display math blocks in *preview* mode can utilise *collapsing margins*
 Math blocks can be given in two ways in the markdown code:
 
 1. Contained within a line of continuous markdown text;
-2. On a separate line of markdown input.
+2. on a separate line of markdown input.
 
 A block of display math is rendered always as a `div.math.math-block.cm-embed-block`, which contains a special `mjx-container` element. The `mjx-container` is styled by Obsidian with symmetric top and bottom padding of `1em`. In this way, the `mjx-container` element provides already the complete whitespace around the respective formula, and *Obsidian-Typo* styles should not introduce additional whitespace around display math.
 
 When a math block is surrounded on both the left and right sides by continuous text, it will be separated vertically above and below appropriately by the `1em` padding imposed by the `mjx-container` element. Math blocks surrounded by such text only on the *left* or only at the *right* however are problematic:
 
-- The formula will be *embedded* in the `.cm-line` element corresponding to the line of markdown input. This `.cm-line` element can receive padding *completely independent* from the math block contained; in this case the padding around the `.cm-line` adds up with the padding declared for the `mjx-container`.
+- The formula will be *embedded* in the `.cm-line` element corresponding to the line of markdown input. This `.cm-line` element can receive padding *completely independent* from the math block contained; in this case the padding for the `.cm-line` adds up with the padding declared for the `mjx-container`.
 - Obsidian injects spacer `img` elements, which introduce additional vertical whitespace where it is not appropriate.
 
 Blank lines above or below of display math do not harm, but they do not correspond to whitespace in *preview* mode, and will therefore be displayed only in *live mode*.
@@ -130,7 +131,7 @@ It is thus recommended to *neither* separate math blocks from the surroundings b
 
 When the document *starts* with display math, its vertical top padding introduces *additional* unintended whitespace, in effect doubling the distance to the title line of the document. Here, the objective to inhibit additional whitespace is not met.
 
-The `div.math.(...)` block is *not* of the class `.cm-line`. This means that:
+The `div.math.(...)` block is *not* of the class `.cm-line`. This implies that:
 
 - Math blocks right above a heading will not be selected as a `.cm-line` preceding the headline. Such headlines are therefore styled *as if they were topmost* in the document, resulting in a `padding-top: 0`. Because here the formula provides an `1em` vertical padding, the resulting vertical whitespace is correct.
 - Math blocks directly following a headline aren't selected to provide the `1em` space below of such a headline. Here, the top-padding of the formula serves as the correct substitute.
@@ -146,7 +147,7 @@ The shade of grey used is implemented by setting the `--code-background` variabl
 
 The size of code segment texts, both inline as well as in code blocks, is set by `--code-size`. Inline code sequences in header lines appear as a corner case: These spans are `span.cm-header.cm-inline-code` elements. Here, Obsidian imposes a `font-size: inherit !important` declaration, overriding the non-`!important` styles to implement `--code-size`; this is overridden once more by a `font-size: var(--code-size) !important` declaration in *Obsidian-Typo*.
 ## 3.3 Blank Lines and Corresponding Margin
-*Obsidian-Typo* introduces variables `--font-size-blank-line` and `--margin-blank-line`. Here, the `--font-size-blank-line` is set to a percentage, applied to the `font-size` of blank lines. The measure is designed to provide clear separation of the two lines neighbouring to it, while avoiding the unnecessary spacious separation of a *blank line* in full size. The figure has been determined down to a percent of change. The equivalent of the editing-mode `--font-size-blank-line` is the reading-mode `--margin-blank-line`. Both shall introduce whitespace of the same amount: `--font-size-blank-line` by being applied to an *entire line*, while `--margin-blank-line` being used as the `margin` property of one of the elements corresponding to the contents preceding/following the empty line. Here, a manual calculation is required to ensure identical rendering of *blank lines* and corresponding *margin*. The height of the empty line is defined by the font size it inherits, reduced by the `--font-size-blank-line` to a certain fraction, while the blank line *also* inherits the `--line-height-normal`, leading to an additional factor when calculating its entire height in `em` of the continuous text. Calling the `--font-size-blank-line` $f$, the `--line-height-normal` $l$, and the resulting *space* $s$, it holds that:$$ s = f \cdot l \cdot \mathrm{1em} $$Thus, the mantissa of the `--margin-blank-line` variable's value, before the unit `em`, is $f \cdot l$.
+*Obsidian-Typo* introduces variables `--font-size-blank-line` and `--margin-blank-line`. Here, the `--font-size-blank-line` is set to a percentage, applied as the `font-size` of blank lines. The measure is designed to provide clear separation of the two lines neighbouring to it, while avoiding the unnecessary spacious separation of a *blank line* in full size. The figure has been determined down to a percent of change. The equivalent of the editing-mode `--font-size-blank-line` is the reading-mode `--margin-blank-line`. Both shall introduce whitespace of the same amount: `--font-size-blank-line` by being applied to an *entire line*, while `--margin-blank-line` being used as the `margin` property of one of the elements corresponding to the contents preceding/following the empty line. Here, a manual calculation is required to ensure identical rendering of *blank lines* and corresponding *margin*. The height of the empty line is defined by the font size it inherits, reduced by the `--font-size-blank-line` to a certain fraction, while the blank line *also* inherits the `--line-height-normal`, leading to an additional factor when calculating its entire height in `em` of the continuous text. Calling the `--font-size-blank-line` $f$, the `--line-height-normal` $l$, and the resulting *space* $s$, it holds that:$$ s = f \cdot l \cdot \mathrm{1em} $$Thus, the mantissa of the `--margin-blank-line` variable's value, before the unit `em`, is $f \cdot l$.
 
 `--margin-blank-line` is used as vertical margin of `p`, `ol` und `ul`, as well as `pre` HTML elements. The `pre` element in preview mode does not override the `font-size` it inherits: The reduction to `--code-size` is applied to the contained `code` element. Thus, the `--margin-blank-line` can be applied to the `pre` element *directly*.
 
@@ -161,11 +162,11 @@ During the tuning phase of writing *Obsidian-Typo*, the measures related to *bla
 
 This procedure is sufficient to provide coherence between whitespace lines and margin separations.
 ## 3.4 Headlines
-The sizes of headlines are imposed by setting `--h1-size` .. `--h6-size` to the figures given in the table above (Sect. *Whitespace*).
+The sizes of headlines are imposed by setting `--h1-size` ... `--h6-size` to the figures given in the table above (Sect. *Whitespace*).
 
-Furthermore, the weight of all headlines is set to 600 using `--h1-weight` .. `--h6-weight`.
+Furthermore, the weight of all headlines is set to 600 using `--h1-weight` ... `--h6-weight`.
 
-Finally, all headlines are declared to use the *normal* font variant via `--h1-variant` .. `--h6-variant`.
+Finally, all headlines are declared to use the *normal* font variant via `--h1-variant` ... `--h6-variant`.
 ## 3.5 Checklists
 The shape of checklist items using the default theme is rectangular with smoothed corners. It is changed to fully circular by declaring `--checkbox-radius: 50%` (taken from kepano's *Minimal* theme).
 

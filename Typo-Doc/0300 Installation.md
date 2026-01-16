@@ -51,11 +51,11 @@ The Apple iOS and iPadOS apps as well as the iCloud service are all reluctant to
 1. You cannot accesss the `.obsidian` folder by the iOS Files application.
 2. When copying or moving a folder into a different location, by any means, it will *replace* any existing folder *completely* and won't just change or add new files.
 3. You cannot replace the `.obsidian` folder separately by using iTunes-based file exchange with the Obsidian app installed on the iOS device.
-4. I didn't find an Obsidian plugin to manually copy over a CSS snippet. There are some ways of creating and editing them, but I didn't spot a way to *copy files*. I also couldn't figure out an alternative to Apple's Files app, to get access to dot-files.
+4. I didn't find an Obsidian plugin to manually copy over a CSS snippet. There are some ways of creating and editing them, but I didn't spot a way to *copy files*. I also couldn't figure out an alternative to Apple's Files app, to get access to dot-directories like `.obsidian`.
 5. I've tried to work with the Google Drive app by copying over the vault in question using Files to the Google Drive, and attempting to copy it back after modification. While the first step was successfully carried out, the second one was not, with an error message about some failed communication with a helper program. This error did not show up when the vault folder on Google Drive did not contain the `.obsidian` folder.
 6. There's no way to copy over symblic links, so this isn't an option to peek into the `.obsidian` folder from the Files app or similar.
 7. An iCloud-based Obsidian vault can, in principle, be accessed by the iCloud Drive web interface, however, here's also no possibility e.g. to create dot-folders like `.obsidian`, with the hint that such names would be reserved for the operating system.
-8. In the iCloud Drive folder on the Macintosh Finder program it is furthermore *impossible* to *create* folders like `.obsidian`. Luckily in our case this folder already exists, so that in this way the iCloud Drive can be used to surgically modify the vault, as described in the previous section.
+8. In the iCloud Drive folder on the Macintosh it is furthermore *impossible* to *create* folders like `.obsidian`. Luckily in our case this folder already exists, so that in this way the iCloud Drive can be used to surgically modify the vault, as described in the previous section.
 ## 3.4 Windows
 On Windows, the situation is similar to the macOS one: *Either* you use the Explorer, *or* some program providing a terminal. There exist *two* terminals built-in to Windows: The `cmd` program and PowerShell. But any other terminal will do as well; personally, I am using the Cygwin Terminal.
 
