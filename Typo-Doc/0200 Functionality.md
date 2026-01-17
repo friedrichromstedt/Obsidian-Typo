@@ -23,7 +23,7 @@ print("Hello World!")
 is chosen considerably smaller than the continuous text surrounding code listings, to ensure proper visual quality of the results. When *Obsidian-Typo* is configured to set the background colour of code, it uses for light theme variants a shade of grey carefully selected for white text background; for dark themes *Obsidian-Typo* just uses *black*.
 # 3 Whitespace
 ## 3.1 Paragraphs
-In *editing mode*, white space surrounding paragraphs is provided by entering *empty lines*. The *font size* of these lines is reduced, to limit the visual impact. When the cursor is located directly in such an empty line, the line will be formatted in full size. This results in a slight downward-shift of all elements below that line. The reduction in size of the empty line will be restored when the cursor leaves it.
+In *editing mode*, white space separating paragraphs from each other and from other blocks of continuous text is provided by entering *empty lines*. The *font size* of these lines is reduced, to limit the visual impact. When the cursor is located directly in such an empty line, the line will be formatted in full size. This results in a slight downward-shift of all elements below that line. The reduction in size of the empty line will be restored when the cursor leaves it.
 
 The blocks of text separated by blank lines form the paragraphs in *reading mode*. Here, the same spacing between such paragraphs is provided as it results from the empty lines in editing mode.
 ## 3.2 Headlines
@@ -44,7 +44,7 @@ There is a certain typographic decision which needs to be taken for enumerations
 
 Furthermore, according to the markdown specification, text directly following an item of the list in the next line belongs to that previous line. This behaviour is useful when list items shall be continued on a new line of the markdown input without further ado. However, Obsidian cannot render this inclusion while in editing mode; it will be performed only when in reading mode.
 
-To meet the markdown specs, a blank line is thus required just beneath the last list element. It is therefore a good idea to place blanks before and after lists already when editing the text. *Obsidian-Typo* does *not* render whitespace around a block of list items in editing mode automatically; instead, it relies on the user to type the required blank lines.
+To meet the markdown specs, a blank line is thus required just beneath the last list element. It is therefore a good idea to place blanks separating lists from other continuous text already when editing the text. *Obsidian-Typo* does *not* render whitespace around a block of list items in editing mode automatically; instead, it relies on the user to type the required blank lines.
 
 In reading mode, corresponding whitespace around the block of list items will be rendered automatically, yielding the same layout as resulting from *blank lines* in editing mode. Obsidian declares an additional, very small small amount of whitespace rendered atop and below each individual list item; this whitespace remains unaltered by *Obsidian-Typo*.
 ## 3.5 Blocks of Mathematical Formulas

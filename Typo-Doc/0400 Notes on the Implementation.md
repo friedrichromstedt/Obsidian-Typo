@@ -54,7 +54,7 @@ Headlines do not provide the padding between a headline and following non-headli
 2. When the next `.cm-line` is of the `.HyperMD-codeblock` class, a *slightly different* measure is applied as `padding-top`, because `.HyperMD-codeblocks` are rendered with a reduced `font-size`.
 3. When the `.cm-line` is *empty* and does *not* carry the cursor, it will be styled to provide the whitespace between the headline and the following content. The empty line won't be selected for this rule when the cursor is located inside of it; in this case, it will be styled identically to the case where it is non-empty.
 
-A `div.HyperMD-header` element adjacent to a `div.HyperMD-header` is selected as a "`div.cm-line` following a `div.HyperMD-header.cm-line`" as well. This, in the first place, establishes by rule (1.) a `padding-top: 1em`. For a `div.HyperMD-header-<N>` element following *any* `.cm-line`, this is overridden by the correct, smaller figure, which depend on the *level* of the headline. These rules declare a suitable `padding-top` for any headline following *anything*.
+A `div.HyperMD-header` element adjacent to a `div.HyperMD-header` is selected as a "`div.cm-line` following a `div.HyperMD-header.cm-line`" as well. This, in the first place, establishes by rule (1.) a `padding-top: 1em`. For a `div.HyperMD-header-<N>` element following *any* `.cm-line`, this is overridden by the correct, smaller figure, which depends on the *level* of the headline. These rules declare a suitable `padding-top` for any headline following *anything*.
 
 The `padding-top` will be re-set to zero, when the headline is located below a stack of two elements:
 
@@ -64,7 +64,8 @@ The `padding-top` will be re-set to zero, when the headline is located below a s
 This approach ensures that in a stack of directly adjacent headlines it holds that:
 
 1. The first headline is separated from the content preceding it by `1em` of continuous text, unless the headline is the first `.cm-line` in the whole document, and unless it is separated from another headline by a blank line;
-2. between successive headlines, the `1em` padding is installed.
+2. between successive headlines, the `1em` padding is installed;
+3. any following non-headline `.cm-line` content will provide the `1em` headline separation below.
 
 In preview mode, where *margins* can be used to style vertical whitespace, and where no elements corresponding to empty lines exist, the situation is considerably more simple. For headlines, it is sufficient to install vertical `margin` using the figures equivalent to `1em` of continuous text.
 
