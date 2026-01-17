@@ -14,39 +14,7 @@ body {
          * adjacent blank lines. */
         /* var(--font-size-blank-line) * var(--line-height-normal) */
         /* Needs to be maintained manually. */
-}
-
-/* Margin around paragraphs, ol, and ul ... */
-
-/* Variant A: Margin around each list item: */
-
-/*
-.markdown-preview-view p,
-.markdown-preview-view li {
-    margin: 0.4em 0;
-}
-.markdown-preview-view ol,
-.markdown-preview-view ul {
-    margin: 0;
-}
-
-div.HyperMD-list-line {
-    padding-top: 0.4em !important;
-    padding-bottom: 0 !important;
-}
-div.HyperMD-list-line:not(:has(+ div.HyperMD-list-line)) {
-    padding-bottom: 0.4em !important;
-}
-*/
-
-/* Variant B: Margin only around the entire lists: */
-
-.markdown-preview-view p {
-    margin: var(--margin-blank-line) 0;
-}
-.markdown-preview-view ol,
-.markdown-preview-view ul {
-    margin: var(--margin-blank-line) 0;
+    --p-spacing: var(--margin-blank-line);
 }
 
 /* In editing mode, paragraphs are separated by blank lines: */
@@ -90,6 +58,10 @@ div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
      * preceding a table. */
     height: 0 !important;
         /* Eliminate the vertical effect of the blank line. */
+}
+
+div.cm-line:has(> br:only-child):not(.cm-active):has(+ div.math.math-block) {
+    height: 0;
 }
 
 /* Code elements ... */
