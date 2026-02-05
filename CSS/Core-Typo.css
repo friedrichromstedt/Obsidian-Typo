@@ -60,8 +60,18 @@ div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
         /* Eliminate the vertical effect of the blank line. */
 }
 
+/* Eliminate blank lines directly preceding a display-math block.  This is
+ * required to permit separation of such math from a list by a blank line. */
 div.cm-line:has(> br:only-child):not(.cm-active):has(+ div.math.math-block) {
-    height: 0;
+    font-size: 0;
+}
+/* Eliminate blank lines directly preceding a headline.  For blank lines
+ * following headlines ``font-size: 100%`` will be specified below,
+ * overriding the figure of ``font-size: 0`` given here.
+ * */
+div.cm-line:has(> br:only-child):not(.cm-active):has(+ div.HyperMD-header) {
+    /* Specificity (0, 4, 3). */
+    font-size: 0;
 }
 
 /* Code elements ... */
@@ -142,6 +152,7 @@ div.HyperMD-header.cm-line + .cm-line.HyperMD-codeblock { padding-top: var(--cod
  * the cursor*, then do not match it (treat it effectively as a line with
  * text). */
 div.HyperMD-header + div.cm-line:has(> br:only-child):not(.cm-active) {
+    /* Specificity (0, 4, 3). */
     font-size: 100%;
     line-height: 1.0;
     padding-top: 0 !important;
