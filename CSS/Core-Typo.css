@@ -65,6 +65,10 @@ div.cm-line:has(> br:only-child):has(+ .cm-table-widget) {
 div.cm-line:has(> br:only-child):not(.cm-active):has(+ div.math.math-block) {
     font-size: 0;
 }
+/* Eliminate also blanks *below* display math: */
+div.math.math-block + div.cm-line:has(> br:only-child):not(.cm-active) {
+    font-size: 0;
+}
 /* Eliminate blank lines directly preceding a headline.  For blank lines
  * following headlines ``font-size: 100%`` will be specified below,
  * overriding the figure of ``font-size: 0`` given here.
