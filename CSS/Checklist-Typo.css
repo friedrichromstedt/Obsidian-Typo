@@ -1,3 +1,5 @@
+/* Part of Obsidian-Typo v1.0.0 */
+
 /*
 Taken from the Minimal Obsidian theme by Steph Ango, published under the
 MIT license:
@@ -21,13 +23,12 @@ MIT license:
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
-
-I (Friedrich Romstedt) overrided a the strike-through declaration of the
-*cancelled* ('-') checkmark icon specification and added some variable
-substitutions right here at the top.
 */
 
 body {
+    /* (Added by Friedrich Romstedt:)  Promote the Obsidian accent colour
+     * to the `--background-modifier-accent`` variable as it is used by
+     * kepano's Minimal theme: */
     --background-modifier-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
         /* Used as the background colour of '/' (*incomplete*) checkmark
          * icons. */
