@@ -1,4 +1,4 @@
-Abstract
+Overview
 ========
 
 *Obsidian* is a Markdown (``.md`` files) editor.  It uses an HTML-based
