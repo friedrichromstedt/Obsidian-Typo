@@ -17,7 +17,7 @@ implementing all major achievements already in editing mode.
 general UI appearance, and addresses *only* the typography in *reading
 mode* and in *editing mode*.  *Obsidian-Typo* is designed in such a way,
 that the application of its CSS codes to a given *Obsidian Vault* does not
-require adaption of the markdown sources for the Vault's documents.  It
+require adaption of the markdown sources for the vault's documents.  It
 further compensates many adjustments made before using additional blank
 lines *from the beginning* wherever possible and appropriate.  Because with
 *Obsidian-Typo* the typography is optimised already in editing mode, the
