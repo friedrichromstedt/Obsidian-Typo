@@ -1,6 +1,8 @@
 Summary
 =======
 
+*Obsidian-Typo* is a modification package for *Obsidian*.
+
 *Obsidian* is a Markdown (``.md`` files) editor.  It uses an HTML-based
 interface employing *Electron*.  Due to the nature of an HTML-based GUI,
 *all* interface components of *Obsidian* can be styled by CSS (*Cascading
@@ -32,7 +34,7 @@ The remainder sections of this README are structured in the following way:
     *Obsidian-Typo* (with the Default theme).
 
 2.  Below the *Demonstration* section, a short instruction for how to
-    install *Obsidian-Typo* to your favourite Obsidian Vault is given.
+    install *Obsidian-Typo* to an Obsidian Vault is given.
 
 3.  For further reference, the *Documentation* might be a good starting
     point, which it is mentioned in the end of this README file.
@@ -41,8 +43,8 @@ The remainder sections of this README are structured in the following way:
 Demonstration
 =============
 
-The Sample Markdown Code
-------------------------
+Sample Markdown Code
+--------------------
 
 The following Markdown code is to be displayed by Obsidian:
 
@@ -73,8 +75,8 @@ The following Markdown code is to be displayed by Obsidian:
     eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
     blandit.
 
-I added here additional linebreaks to keep the MD code readable without
-horizontal overflow.  In the file which is actually *used* for this
+Here, additional linebreaks have been added to keep the MD code readable
+without horizontal overflow.  In the file which is actually *used* for this
 demonstration, each paragraph is provided on *one single line*.
 
 
@@ -137,8 +139,7 @@ After having installed the CSS snippets, they need to be *enabled* in the
 *Appearance* pane of the vault's settings in Obsidian.  The switches used
 for this purpose are located in the bottom end of the *Appearance* pane.
 
-For cases where these instructions are not detailed enough, there are
-further hints given in the documentation of *Obsidian-Typo*, which is
+Further hints on the installation process are provided in the documentation
 mentioned right below at the end of this README.
 
 
