@@ -29,8 +29,8 @@ experience with Obsidian from the beginning of drafting Obsidian documents.
 The remainder sections of this README are structured in the following way:
 
 1.  In the next section, a *Demonstration* of rendering some sample MD code
-    is given by providing the results a) of using the Default theme, b)
-    employing kepano's Minimal theme, and finally c) when using
+    is given by providing the results a) of using the Default theme, b) in
+    case of employing kepano's Minimal theme, and finally c) when using
     *Obsidian-Typo* (with the Default theme).
 
 2.  Below the *Demonstration* section, a short instruction for how to
@@ -125,7 +125,8 @@ Installation
 
 *Obsidian-Typo* is provided as a set of CSS snippets which can be installed
 to a given Obsidian Vault.  These CSS snippets are located in the ``CSS``
-folder within the *Obsidian-Typo* repository, just aside of this README.
+folder, which is located directly besides of this README in the
+*Obsidian-Typo* repository.
 
 Each Obsidian Vault carries a dot-directory ``.obsidian`` in its root
 directory.  CSS snippets like those provided by *Obsidian-Typo* are
