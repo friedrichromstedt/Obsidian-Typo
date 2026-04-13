@@ -143,7 +143,7 @@ After having installed the CSS snippets, they need to be *enabled* in the
 for this purpose are located in the bottom end of the *Appearance* pane.
 
 Further hints on the installation process are provided in the documentation
-mentioned right below at the end of this README.
+referred to below at the end of this README.
 
 
 Documentation
