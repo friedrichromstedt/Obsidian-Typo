@@ -50,30 +50,30 @@ The following Markdown code is to be displayed by Obsidian:
 
 .. code:: markdown
 
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.  At
-    vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd
-    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-    # Headline
-    Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-    consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
-    et iusto odio:
+    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+    sed diam voluptua.  At vero eos et accusam et justo duo dolores et ea
+    rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+    ipsum dolor sit amet.  # Headline Duis autem vel eum iriure dolor in
+    hendrerit in vulputate velit esse molestie consequat, vel illum dolore
+    eu feugiat nulla facilisis at vero eros et accumsan et iusto odio:
 
-    1. Dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te
-       feugait nulla facilisi.
-    2. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-       nibh euismod tincidunt ut laoreet.
+    1. Dignissim qui blandit praesent luptatum zzril delenit augue duis
+       dolore te feugait nulla facilisi.
+    2. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+       nonummy nibh euismod tincidunt ut laoreet.
 
-    Dolore magna aliquam erat volutpat praesent luptatum zzril delenit augue duis
-    dolore te feugait nulla facilisi.
+    Dolore magna aliquam erat volutpat praesent luptatum zzril delenit
+    augue duis dolore te feugait nulla facilisi.
 
     # Headline with Whitespace
 
-    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
-    lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
-    dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore
-    eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
-    blandit.
+    Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+    suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+
+    Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+    molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero
+    eros et accumsan et iusto odio dignissim qui blandit.
 
 Here, additional linebreaks have been added to keep the MD code readable
 without horizontal overflow.  In the file which is actually *used* for this
@@ -125,16 +125,16 @@ Installation
 
 *Obsidian-Typo* is provided as a set of CSS snippets which can be installed
 to a given Obsidian Vault.  These CSS snippets are located in the ``CSS``
-folder, which is located directly besides of this README in the
+folder, which is located directly besides of this README in the root of the
 *Obsidian-Typo* repository.
 
-Each Obsidian Vault carries a dot-directory ``.obsidian`` in its root
+Each Obsidian vault carries a dot-directory ``.obsidian`` in its root
 directory.  CSS snippets like those provided by *Obsidian-Typo* are
 installed to a subfolder ``snippets`` of the ``.obsidian`` folder.  When
 the vault in question exists in ``/path/to/vault/``, the corresponding
 directory is ``/path/to/vault/.obsidian/snippets/``.  Notice that the
-``snippets`` folder does not exist in the beginning of each vault's life,
-it needs to be created once.
+``snippets`` folder does not exist in newly created Obsidian vaults in the
+beginning, it needs to be created once.
 
 After having installed the CSS snippets, they need to be *enabled* in the
 *Appearance* pane of the vault's settings in Obsidian.  The switches used
