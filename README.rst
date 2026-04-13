@@ -114,10 +114,12 @@ Rendering using *Obsidian-Typo*
 Using *Obsidian-Typo* with the Default theme the results in Live mode are:
 
 .. image:: Demo/Typo-Live.png
+    :alt: Obsidian-Typo in Live mode
 
 and in Preview mode:
 
 .. image:: Demo/Typo-Preview.png
+    :alt: Obsidian-Typo in Preview mode
 
 
 Installation
