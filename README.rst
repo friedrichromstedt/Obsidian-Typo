@@ -2,7 +2,7 @@ Summary
 =======
 
 *Obsidian-Typo* is a collection of CSS snippets for *Obsidian*, refining
-the typography of text rendered in the editor.  It focuses mainly on the
+the typography of the rendered markdown texts.  It focuses mainly on the
 way how whitespace is displayed by *Obsidian*, without affecting the
 markdown code of the documents.  It is predictable, free of heuristics, and
 reversible by deactivation of the snippets.
