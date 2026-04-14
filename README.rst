@@ -1,7 +1,11 @@
 Summary
 =======
 
-*Obsidian-Typo* is a modification package for *Obsidian*.
+*Obsidian-Typo* is a collection of CSS snippets for *Obsidian*, addressing
+typographical improvements.  It focuses mainly on the way whitespace is
+displayed by Obsidian without affecting the markdown code of the documents.
+It is predictable, free of heuristics, and reversible by deactivation of
+the snippets.
 
 *Obsidian* is a Markdown (``.md`` files) editor.  It uses an HTML-based
 interface employing *Electron*.  Due to the nature of an HTML-based GUI,
