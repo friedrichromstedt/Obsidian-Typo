@@ -134,19 +134,26 @@ Installation
 *Obsidian-Typo* is provided as a set of CSS snippets which can be installed
 to a given Obsidian Vault.  These CSS snippets are located in the ``CSS``
 folder, which is located directly besides of this README in the root of the
-*Obsidian-Typo* repository.
+*Obsidian-Typo* repository.  The installation of *Obsidian-Typo* consists
+in the following procedure:
 
-Each Obsidian vault carries a dot-directory ``.obsidian`` in its root
-directory.  CSS snippets like those provided by *Obsidian-Typo* are
-installed to a subfolder ``snippets`` of the ``.obsidian`` folder.  When
-the vault in question exists in ``/path/to/vault/``, the corresponding
-directory is ``/path/to/vault/.obsidian/snippets/``.  Notice that the
-``snippets`` folder does not exist in newly created Obsidian vaults in the
-beginning, it needs to be created once.
+1.  Each Obsidian vault carries a dot-directory ``.obsidian`` in its root
+    directory.  CSS snippets like those provided by *Obsidian-Typo* are
+    copied to a subfolder ``snippets`` of the ``.obsidian`` folder.  When
+    the vault in question exists in ``/path/to/vault/``, the corresponding
+    directory is ``/path/to/vault/.obsidian/snippets/``.  Notice that the
+    ``snippets`` folder does not exist in newly created Obsidian vaults in
+    the beginning, it needs to be created once.
 
-After having installed the CSS snippets, they need to be *enabled* in the
-*Appearance* pane of the vault's settings in Obsidian.  The switches used
-for this purpose are located in the bottom end of the *Appearance* pane.
+2.  After having installed the CSS snippets, they need to be *enabled* in
+    the *Appearance* pane of the vault's settings in Obsidian.  The
+    switches used for this purpose are located in the bottom end of the
+    *Appearance* pane.
+
+Nothing beyond the two steps is required to install *Obsidian-Typo*.  To
+revert back to the state without *Obsidian-Typo*, the snippets can be
+either *deactivated* in the *Appearance* pane, or they can be just
+*removed* from the ``snippets`` folder.
 
 Further hints on the installation process are provided in the documentation
 referred to below at the end of this README.
