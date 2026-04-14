@@ -33,9 +33,11 @@ experience with Obsidian from the beginning of drafting Obsidian documents.
 The remainder sections of this README are structured in the following way:
 
 1.  In the next section, a *Demonstration* of rendering some sample MD code
-    is given by providing the results a) of using the Default theme, b) in
-    case of employing kepano's Minimal theme, and finally c) when using
-    *Obsidian-Typo* (with the Default theme).
+    is given by providing the results
+
+    a)  using *Obsidian-Typo* (with the Default theme);
+    b)  without *Obsidian-Typo*, using either the vanilla Default theme or
+        kepano's *Minimal* theme.
 
 2.  Below the *Demonstration* section, a short instruction for how to
     install *Obsidian-Typo* to an Obsidian Vault is given.
@@ -84,6 +86,20 @@ without horizontal overflow.  In the file which is actually *used* for this
 demonstration, each paragraph is provided on *one single line*.
 
 
+Rendering using *Obsidian-Typo*
+-------------------------------
+
+Using *Obsidian-Typo* with the Default theme the results in Live mode are:
+
+.. image:: Demo/Typo-Live.png
+    :alt: Obsidian-Typo in Live mode
+
+and in Preview mode:
+
+.. image:: Demo/Typo-Preview.png
+    :alt: Obsidian-Typo in Preview mode
+
+
 Rendering with the Default Theme
 --------------------------------
 
@@ -110,20 +126,6 @@ and the Preview is:
 
 .. image:: Demo/Minimal-Preview.png
     :alt: Minimal theme in Preview mode
-
-
-Rendering using *Obsidian-Typo*
--------------------------------
-
-Using *Obsidian-Typo* with the Default theme the results in Live mode are:
-
-.. image:: Demo/Typo-Live.png
-    :alt: Obsidian-Typo in Live mode
-
-and in Preview mode:
-
-.. image:: Demo/Typo-Preview.png
-    :alt: Obsidian-Typo in Preview mode
 
 
 Installation
