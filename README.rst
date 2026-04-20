@@ -32,12 +32,8 @@ experience with Obsidian from the beginning of drafting Obsidian documents.
 
 The remainder sections of this README are structured in the following way:
 
-1.  In the next section, a *Demonstration* of rendering some sample MD code
-    is given by providing the results of:
-
-    a)  using *Obsidian-Typo* (with the Default theme);
-    b)  working without *Obsidian-Typo*, using either the vanilla Default theme
-        or kepano's *Minimal* theme.
+1.  In the next section, a *Demonstration* of rendering some sample
+    Markdown document with *Obsidian-Typo* is given.
 
 2.  Below the *Demonstration* section, a short instruction for how to
     install *Obsidian-Typo* to an Obsidian Vault is given.
@@ -83,20 +79,22 @@ The following Markdown code is to be displayed by Obsidian:
     molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero
     eros et accumsan et iusto odio dignissim qui blandit.
 
-In this listing, additional linebreaks have been added to keep the MD code
-readable without horizontal overflow.  In the file which is actually *used*
-for this demonstration, each paragraph is provided on *one single line*.
-
 There are two headlines presented here:  The first one (*"Headline"*) is
 written directly adjacent to the continuous text around it, while the
 second one (*"Headline with Whitespace"*) is padded by one single blank
 line above and below.
+
+To prevent horizontal overflow of the Markdown document shown above,
+additional linebreaks have been added.  These breaks *only* limit the line
+length.  In the document used for the following rendering examples, these
+linebreaks are not present, and the paragraphs are provided as one-liners.
 
 
 Rendering using *Obsidian-Typo*
 -------------------------------
 
 In this demonstration, *Obsidian-Typo* is used with the Default theme.
+*Obsidian-Typo* has been tested with kepano's *Minimal* theme as well.
 
 With *Obsidian-Typo* enabled, the results in live mode are:
 
@@ -108,45 +106,29 @@ and in preview mode:
 .. image:: Demo/Typo-Preview.png
     :alt: Obsidian-Typo in Preview mode
 
-The styles introduced by *Obsidian-Typo* provide unified whitespace around
-the two headlines, result in an appropriate separation around the
-enumeration (in the section below the *Headline*) and to an adequate
-spacing between the two paragraphs in the second section (below *Headline
-with Whitespace*).
+These renderings demonstrate a couple of features implemented by
+*Obsidian-Typo*:
 
-The blank lines surrounding the *Headline with Whitespace* are of no effect
-to the typeset result, while they remain unaltered in the MD sources.
+1.  The styles introduced by *Obsidian-Typo* result in unified whitespace
+    around the two headlines, independent on whether they are surrounded in
+    the Markdown text by blank lines (heading *Headline with Whitespace*)
+    or not (as with the *Headline*).  Here, the blank lines surrounding the
+    *Headline with Whitespace* are of no effect to the typeset result,
+    while they remain unaltered in the Markdown sources.
 
-These findings apply both to the editing mode display as well as to the
-reading mode.
+2.  The styles install an appropriate separation around the enumeration (in
+    the section below the *Headline*), and lead to an adequate spacing
+    between the two paragraphs in the second section (below *Headline with
+    Whitespace*).  The resulting vertical separation is a fraction of a
+    full line height.
 
+3.  The renderings in *editing mode* and in *reading mode* are virtually
+    identical.  Transiting from *editing mode* to *reading mode* and vice
+    versa leaves the rendering result unaltered in many respects.
 
-Rendering with the Default Theme
---------------------------------
-
-Rendering in live mode with the vanilla Default theme looks like:
-
-.. image:: Demo/Default-Live.png
-    :alt: Default theme in Live mode
-
-while in preview mode the result is:
-
-.. image:: Demo/Default-Preview.png
-    :alt: Default theme in Preview mode
-
-
-Rendering with kepano's Minimal Theme
--------------------------------------
-
-With the pure Minimal theme, the given MD code is shown in live mode as:
-
-.. image:: Demo/Minimal-Live.png
-    :alt: Minimal theme in Live mode
-
-and the preview is:
-
-.. image:: Demo/Minimal-Preview.png
-    :alt: Minimal theme in Preview mode
+Most Obsidian Markdown documents will benefit from these features right
+from the beginning, without the need of manual intervention in the Markdown
+source texts.
 
 
 Installation
