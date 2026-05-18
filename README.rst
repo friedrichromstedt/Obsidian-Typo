@@ -9,15 +9,11 @@ An example rendering using *Obsidian-Typo* is:
 .. figure:: Demo/Typo-Live.png
     :alt: Obsidian-Typo in Live mode
 
-    Rendering using *Obsidian-Typo* in Live mode
-
 This rendering can be compared to the display obtained *without*
 *Obsidian-Typo*:
 
 .. figure:: Demo/Default-Live.png
     :alt: The Default theme in Live mod
-
-    Renderig using the Default theme in Live mode
 
 The Markdown code to be rendered is in both cases the same:
 
