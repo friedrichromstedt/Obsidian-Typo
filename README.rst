@@ -6,13 +6,13 @@ reversible by deactivation of the snippets.
 
 An example rendering using *Obsidian-Typo* is:
 
-.. figure:: Demo/Typo-Live.png
+.. image:: Demo/Typo-Live.png
     :alt: Obsidian-Typo in Live mode
 
 This rendering can be compared to the display obtained *without*
 *Obsidian-Typo*:
 
-.. figure:: Demo/Default-Live.png
+.. image:: Demo/Default-Live.png
     :alt: The Default theme in Live mod
 
 The Markdown code to be rendered is in both cases the same:
